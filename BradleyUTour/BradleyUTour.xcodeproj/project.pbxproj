@@ -13,6 +13,7 @@
 		1678D9081E96BC3E007B9397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1678D9071E96BC3E007B9397 /* Assets.xcassets */; };
 		1678D90B1E96BC3E007B9397 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1678D9091E96BC3E007B9397 /* LaunchScreen.storyboard */; };
 		1678D9161E96BC3E007B9397 /* BradleyUTourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1678D9151E96BC3E007B9397 /* BradleyUTourTests.swift */; };
+		916961FC5B9764CAEDE6BBA4 /* Pods_BradleyUTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A9753BBD3F6F79647A145C /* Pods_BradleyUTour.framework */; };
 		EE5EA38A1E96C8D500B7CBFF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5EA3891E96C8D400B7CBFF /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +38,10 @@
 		1678D9111E96BC3E007B9397 /* BradleyUTourTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BradleyUTourTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1678D9151E96BC3E007B9397 /* BradleyUTourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BradleyUTourTests.swift; sourceTree = "<group>"; };
 		1678D9171E96BC3E007B9397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC821909BD1627FF807A4863 /* Pods-BradleyUTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BradleyUTour.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BradleyUTour/Pods-BradleyUTour.debug.xcconfig"; sourceTree = "<group>"; };
+		DBDAB9C6F2B7DD6D07ED8166 /* Pods-BradleyUTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BradleyUTour.release.xcconfig"; path = "Pods/Target Support Files/Pods-BradleyUTour/Pods-BradleyUTour.release.xcconfig"; sourceTree = "<group>"; };
 		EE5EA3891E96C8D400B7CBFF /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		F9A9753BBD3F6F79647A145C /* Pods_BradleyUTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BradleyUTour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				916961FC5B9764CAEDE6BBA4 /* Pods_BradleyUTour.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +69,8 @@
 				1678D8FF1E96BC3E007B9397 /* BradleyUTour */,
 				1678D9141E96BC3E007B9397 /* BradleyUTourTests */,
 				1678D8FE1E96BC3E007B9397 /* Products */,
+				388A288D33A73D0706DBDBF9 /* Pods */,
+				8950DB314DB5C4326688FD90 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,8 +88,8 @@
 			children = (
 				1678D9001E96BC3E007B9397 /* AppDelegate.swift */,
 				1678D9021E96BC3E007B9397 /* ViewController.swift */,
-				1678D9041E96BC3E007B9397 /* Main.storyboard */,
 				EE5EA3891E96C8D400B7CBFF /* SignInViewController.swift */,
+				1678D9041E96BC3E007B9397 /* Main.storyboard */,
 				1678D9071E96BC3E007B9397 /* Assets.xcassets */,
 				1678D9091E96BC3E007B9397 /* LaunchScreen.storyboard */,
 				1678D90C1E96BC3E007B9397 /* Info.plist */,
@@ -99,6 +106,23 @@
 			path = BradleyUTourTests;
 			sourceTree = "<group>";
 		};
+		388A288D33A73D0706DBDBF9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC821909BD1627FF807A4863 /* Pods-BradleyUTour.debug.xcconfig */,
+				DBDAB9C6F2B7DD6D07ED8166 /* Pods-BradleyUTour.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8950DB314DB5C4326688FD90 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F9A9753BBD3F6F79647A145C /* Pods_BradleyUTour.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +130,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1678D91A1E96BC3E007B9397 /* Build configuration list for PBXNativeTarget "BradleyUTour" */;
 			buildPhases = (
+				32CBF248E1289171D6A3370A /* [CP] Check Pods Manifest.lock */,
 				1678D8F91E96BC3E007B9397 /* Sources */,
 				1678D8FA1E96BC3E007B9397 /* Frameworks */,
 				1678D8FB1E96BC3E007B9397 /* Resources */,
+				D8E63D72D74522E9FB183EB4 /* [CP] Embed Pods Frameworks */,
+				72690DF7237CE652ACEF3A50 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -198,6 +225,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		32CBF248E1289171D6A3370A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		72690DF7237CE652ACEF3A50 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BradleyUTour/Pods-BradleyUTour-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8E63D72D74522E9FB183EB4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BradleyUTour/Pods-BradleyUTour-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1678D8F91E96BC3E007B9397 /* Sources */ = {
@@ -345,6 +420,7 @@
 		};
 		1678D91B1E96BC3E007B9397 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC821909BD1627FF807A4863 /* Pods-BradleyUTour.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = G3KPCQH6RP;
@@ -358,6 +434,7 @@
 		};
 		1678D91C1E96BC3E007B9397 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBDAB9C6F2B7DD6D07ED8166 /* Pods-BradleyUTour.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = G3KPCQH6RP;
