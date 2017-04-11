@@ -48,7 +48,7 @@
         <!--Home-->
         <scene sceneID="Snd-5n-01n">
             <objects>
-                <viewController id="7kx-fu-0VI" sceneMemberID="viewController">
+                <viewController id="7kx-fu-0VI" customClass="MapViewController" customModule="BradleyUTour" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EMj-6p-xOM"/>
                         <viewControllerLayoutGuide type="bottom" id="gwB-vk-EBP"/>
@@ -57,22 +57,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCU-Yv-WPE">
-                                <rect key="frame" x="166" y="323" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bradley University" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCU-Yv-WPE">
+                                <rect key="frame" x="118" y="79" width="139" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CNS-43-f8R">
+                                <rect key="frame" x="21" y="108" width="333" height="482"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="flZ-Tg-uHQ"/>
                     <navigationItem key="navigationItem" id="46k-3U-03B"/>
+                    <connections>
+                        <outlet property="mapInfo" destination="CNS-43-f8R" id="6vr-Ik-wpx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GVE-Ng-hNS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4574" y="-369"/>
+            <point key="canvasLocation" x="4573.6000000000004" y="-369.26536731634184"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="bQD-io-Z3l">
@@ -199,6 +206,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="n7w-rj-vjt"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="jCB-0k-gGl">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
