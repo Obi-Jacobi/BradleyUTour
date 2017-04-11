@@ -71,7 +71,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="flZ-Tg-uHQ"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" id="flZ-Tg-uHQ"/>
                     <navigationItem key="navigationItem" title="MAp" id="46k-3U-03B"/>
                     <connections>
                         <outlet property="mapInfo" destination="CNS-43-f8R" id="6vr-Ik-wpx"/>
@@ -391,4 +391,7 @@
             <point key="canvasLocation" x="4574" y="1052"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Home" width="28" height="31"/>
+    </resources>
 </document>
