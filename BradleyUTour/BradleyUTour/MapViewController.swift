@@ -2,7 +2,7 @@
 //  MapViewController.swift
 //  BradleyUTour
 //
-//  Created by Castor, Alex on 4/11/17.
+//  Created by Castor, Alexander on 4/11/17.
 //  Copyright © 2017 Bradley University. All rights reserved.
 //
 
@@ -14,12 +14,10 @@ import MapKit
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     var locManager: CLLocationManager!
     var myLocations: [CLLocation] = []
-    
     @IBOutlet weak var mapInfo: MKMapView!
     
-    let regionRadius: CLLocationDistance = 100
-    
     func centerMapOnLocation(location: CLLocation) {
+        let regionRadius: CLLocationDistance = 150
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
                                                                   regionRadius * 2.0, regionRadius * 2.0)
         mapInfo.setRegion(coordinateRegion, animated: true)
@@ -38,10 +36,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         // set up the mapview
         mapInfo.delegate = self
-        mapInfo.mapType = MKMapType.standard
-        let initialLocation = CLLocation(latitude: 40.698158, longitude: -89.616026)
-        centerMapOnLocation(location: (initialLocation))
+        mapInfo.mapType = MKMapType.hybrid
         mapInfo.showsUserLocation = true
+        
+        let initialLocation = CLLocation(latitude: 40.698143, longitude: -89.616412)
+        centerMapOnLocation(location: (initialLocation))
     }
     
     override func didReceiveMemoryWarning() {
