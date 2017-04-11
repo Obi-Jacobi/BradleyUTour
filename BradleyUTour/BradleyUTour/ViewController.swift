@@ -31,6 +31,7 @@ class ViewController: UIViewController {
         let puppies = realm.objects(Dog.self).filter("age < 2")
         puppies.count // => 0 because no dogs have been added to the Realm yet
         
+        
         // Persist your data easily
         try! realm.write {
             realm.add(myDog)
