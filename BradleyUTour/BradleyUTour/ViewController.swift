@@ -32,10 +32,11 @@ class ViewController: UIViewController {
         puppies.count // => 0 because no dogs have been added to the Realm yet
         
         
+        /*
         // Persist your data easily
         try! realm.write {
             realm.add(myDog)
-        }
+        }*/
         
         let thing = realm.objects(Dog.self)
         print(thing)

@@ -13,6 +13,7 @@
 		1678D9081E96BC3E007B9397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1678D9071E96BC3E007B9397 /* Assets.xcassets */; };
 		1678D90B1E96BC3E007B9397 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1678D9091E96BC3E007B9397 /* LaunchScreen.storyboard */; };
 		1678D9161E96BC3E007B9397 /* BradleyUTourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1678D9151E96BC3E007B9397 /* BradleyUTourTests.swift */; };
+		16BF56EE1E9E7BC800790E71 /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BF56ED1E9E7BC800790E71 /* RewardsViewController.swift */; };
 		20A85B421E9D5A4300022C1A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A85B411E9D5A4300022C1A /* MapViewController.swift */; };
 		916961FC5B9764CAEDE6BBA4 /* Pods_BradleyUTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A9753BBD3F6F79647A145C /* Pods_BradleyUTour.framework */; };
 		EE5EA38A1E96C8D500B7CBFF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5EA3891E96C8D400B7CBFF /* SignInViewController.swift */; };
@@ -39,6 +40,7 @@
 		1678D9111E96BC3E007B9397 /* BradleyUTourTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BradleyUTourTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1678D9151E96BC3E007B9397 /* BradleyUTourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BradleyUTourTests.swift; sourceTree = "<group>"; };
 		1678D9171E96BC3E007B9397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16BF56ED1E9E7BC800790E71 /* RewardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
 		20A85B411E9D5A4300022C1A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AC821909BD1627FF807A4863 /* Pods-BradleyUTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BradleyUTour.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BradleyUTour/Pods-BradleyUTour.debug.xcconfig"; sourceTree = "<group>"; };
 		DBDAB9C6F2B7DD6D07ED8166 /* Pods-BradleyUTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BradleyUTour.release.xcconfig"; path = "Pods/Target Support Files/Pods-BradleyUTour/Pods-BradleyUTour.release.xcconfig"; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				1678D9021E96BC3E007B9397 /* ViewController.swift */,
 				EE5EA3891E96C8D400B7CBFF /* SignInViewController.swift */,
 				20A85B411E9D5A4300022C1A /* MapViewController.swift */,
+				16BF56ED1E9E7BC800790E71 /* RewardsViewController.swift */,
 				1678D9041E96BC3E007B9397 /* Main.storyboard */,
 				1678D9071E96BC3E007B9397 /* Assets.xcassets */,
 				1678D9091E96BC3E007B9397 /* LaunchScreen.storyboard */,
@@ -282,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16BF56EE1E9E7BC800790E71 /* RewardsViewController.swift in Sources */,
 				1678D9031E96BC3E007B9397 /* ViewController.swift in Sources */,
 				1678D9011E96BC3E007B9397 /* AppDelegate.swift in Sources */,
 				EE5EA38A1E96C8D500B7CBFF /* SignInViewController.swift in Sources */,
