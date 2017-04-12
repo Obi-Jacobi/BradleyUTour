@@ -79,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GVE-Ng-hNS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4574" y="-333"/>
+            <point key="canvasLocation" x="4239" y="-627"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="bQD-io-Z3l">
@@ -271,7 +271,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jOO-Rq-Q3n" id="0hN-0s-MZP">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unvisited Landmark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebe-v1-7lF">
@@ -286,12 +286,15 @@
                                                 <constraint firstItem="ebe-v1-7lF" firstAttribute="leading" secondItem="0hN-0s-MZP" secondAttribute="leadingMargin" constant="8" id="nQO-DE-aR5"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="7rl-gH-Lhu" kind="show" id="aLM-X3-EA2"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Visited" id="nYq-Fo-3Xr">
                                         <rect key="frame" x="0.0" y="72" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nYq-Fo-3Xr" id="Pwn-J4-DaS">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visited Landmark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyF-vZ-lkx">
@@ -317,6 +320,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="914-bt-sUO" id="Jnh-Eb-a4m"/>
+                                    <outlet property="delegate" destination="914-bt-sUO" id="lhk-qT-3ey"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.64705882349999999" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -339,11 +346,119 @@
                     <connections>
                         <outlet property="progressBar" destination="GUD-pO-qKc" id="mk9-xi-Tax"/>
                         <outlet property="progressLabel" destination="gjy-uT-O2J" id="Br6-IM-Sym"/>
+                        <outlet property="tableView" destination="SuV-VS-kNx" id="zLq-jb-YFh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dh0-Rb-g9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4574" y="317"/>
+            <point key="canvasLocation" x="4239" y="264"/>
+        </scene>
+        <!--Checklist-->
+        <scene sceneID="txY-Kv-EVA">
+            <objects>
+                <viewController id="7rl-gH-Lhu" customClass="LandmarkViewController" customModule="BradleyUTour" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hku-hT-8Le"/>
+                        <viewControllerLayoutGuide type="bottom" id="zMD-oG-rMB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I9N-b8-yG9">
+                        <rect key="frame" x="0.0" y="64" width="375" height="797"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJZ-v9-tas">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="797"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dgc-pb-Vt1">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="797"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1xt-yS-4fg">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="251"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="251" id="7lV-yA-FZW"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lydia Moss Bradley Statue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8j-9E-Y00">
+                                                <rect key="frame" x="29" y="259" width="318" height="33.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XGA-fD-1oJ">
+                                                <rect key="frame" x="85" y="727" width="204" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="204" id="08k-13-KHQ"/>
+                                                    <constraint firstAttribute="height" constant="50" id="U3j-RI-pah"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <state key="normal" title="Done">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="7rl-gH-Lhu" eventType="touchUpInside" id="zVo-9u-nIZ"/>
+                                                </connections>
+                                            </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hte-RD-qqT">
+                                                <rect key="frame" x="17" y="292.5" width="341" height="419.5"/>
+                                                <mutableString key="text">Lydia Moss, founder of Bradley University, was born on July 31, 1816 in Vevay, Indiana, alongside the Ohio River. She lived there with her family and husband until the age of 31 when she and her husband Tobias Bradley moved to Peoria, Illinois. Over the next three decades they prospered in real estate and banking…
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porttitor arcu mi, ut pellentesque dolor sagittis sit amet. Integer imperdiet diam nulla, sed porttitor risus porta at. Phasellus sollicitudin neque ut nisi convallis malesuada. Proin in turpis vel quam rhoncus dictum. Maecenas at mattis lectus. Fusce ex enim, dapibus a tellus eu, aliquam malesuada odio. Pellentesque mauris velit, consectetur eu quam sed, laoreet malesuada nibh. Nulla facilisi. Duis ut velit sem. Mauris dapibus vestibulum turpis vel iaculis. Nullam nec enim eget ligula ultrices hendrerit sed id justo. Integer suscipit finibus nisl, in congue nisi volutpat a. Pellentesque mattis urna quis dolor lobortis, eu pellentesque velit volutpat. Quisque sagittis neque eu pellentesque ornare. Mauris convallis interdum iaculis. Nam accumsan neque sed pellentesque malesuada.</mutableString>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.64705882349999999" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="m8j-9E-Y00" firstAttribute="top" secondItem="1xt-yS-4fg" secondAttribute="bottom" constant="8" id="H8e-vG-p63"/>
+                                            <constraint firstAttribute="bottom" secondItem="XGA-fD-1oJ" secondAttribute="bottom" constant="20" id="IFE-fK-LgO"/>
+                                            <constraint firstItem="hte-RD-qqT" firstAttribute="centerX" secondItem="Dgc-pb-Vt1" secondAttribute="centerX" id="NY9-mI-HzP"/>
+                                            <constraint firstItem="1xt-yS-4fg" firstAttribute="top" secondItem="Dgc-pb-Vt1" secondAttribute="top" id="Rog-mR-Shq"/>
+                                            <constraint firstItem="XGA-fD-1oJ" firstAttribute="centerX" secondItem="Dgc-pb-Vt1" secondAttribute="centerX" id="ZgF-qX-Yyl"/>
+                                            <constraint firstAttribute="trailing" secondItem="1xt-yS-4fg" secondAttribute="trailing" id="erf-hI-acg"/>
+                                            <constraint firstItem="m8j-9E-Y00" firstAttribute="centerX" secondItem="Dgc-pb-Vt1" secondAttribute="centerX" id="fJM-BA-oNo"/>
+                                            <constraint firstAttribute="height" constant="797" id="gi8-EG-wkt"/>
+                                            <constraint firstItem="hte-RD-qqT" firstAttribute="leading" secondItem="Dgc-pb-Vt1" secondAttribute="leading" constant="17" id="kGP-mI-FIb"/>
+                                            <constraint firstItem="XGA-fD-1oJ" firstAttribute="top" secondItem="hte-RD-qqT" secondAttribute="bottom" constant="15" id="pfM-Cd-4mc"/>
+                                            <constraint firstAttribute="trailing" secondItem="hte-RD-qqT" secondAttribute="trailing" constant="17" id="psr-3D-ksA"/>
+                                            <constraint firstItem="1xt-yS-4fg" firstAttribute="leading" secondItem="Dgc-pb-Vt1" secondAttribute="leading" id="u41-2w-XE2"/>
+                                            <constraint firstItem="hte-RD-qqT" firstAttribute="top" secondItem="m8j-9E-Y00" secondAttribute="bottom" id="yCr-H2-fML"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Dgc-pb-Vt1" secondAttribute="trailing" id="HUE-71-ZMw"/>
+                                    <constraint firstItem="Dgc-pb-Vt1" firstAttribute="leading" secondItem="pJZ-v9-tas" secondAttribute="leading" id="Kpi-8F-CAk"/>
+                                    <constraint firstItem="Dgc-pb-Vt1" firstAttribute="centerX" secondItem="pJZ-v9-tas" secondAttribute="centerX" id="OLp-K1-Dsd"/>
+                                    <constraint firstAttribute="bottom" secondItem="Dgc-pb-Vt1" secondAttribute="bottom" id="aYA-fc-mcJ"/>
+                                    <constraint firstAttribute="height" constant="797" id="gp2-A0-ZWJ"/>
+                                    <constraint firstItem="Dgc-pb-Vt1" firstAttribute="top" secondItem="pJZ-v9-tas" secondAttribute="top" id="vMv-TR-nE3"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pJZ-v9-tas" firstAttribute="leading" secondItem="I9N-b8-yG9" secondAttribute="leadingMargin" constant="-16" id="3El-1w-t46"/>
+                            <constraint firstItem="pJZ-v9-tas" firstAttribute="centerX" secondItem="I9N-b8-yG9" secondAttribute="centerX" id="C54-g0-bXF"/>
+                            <constraint firstItem="zMD-oG-rMB" firstAttribute="top" secondItem="pJZ-v9-tas" secondAttribute="bottom" id="TF9-d9-iC3"/>
+                            <constraint firstItem="pJZ-v9-tas" firstAttribute="top" secondItem="hku-hT-8Le" secondAttribute="bottom" id="XgQ-KV-Stw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pJZ-v9-tas" secondAttribute="trailing" constant="-16" id="uFB-Ao-NbZ"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <tabBarItem key="tabBarItem" title="Checklist" image="Checklist" id="Z4B-xr-ODh"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="910"/>
+                    <connections>
+                        <outlet property="descriptionText" destination="hte-RD-qqT" id="alv-dc-rM4"/>
+                        <outlet property="doneButton" destination="XGA-fD-1oJ" id="FqC-3X-VN4"/>
+                        <outlet property="imageView" destination="1xt-yS-4fg" id="4ZU-xM-FsV"/>
+                        <outlet property="titleLabel" destination="m8j-9E-Y00" id="oXd-l2-XiZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s9f-Du-fmr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5164" y="-80.059970014992516"/>
         </scene>
         <!--Rewards-->
         <scene sceneID="kRy-tO-2Du">
@@ -638,13 +753,13 @@
             </objects>
             <point key="canvasLocation" x="3505" y="907"/>
         </scene>
-        <!--Test ? -->
+        <!--Tab Bar Controller-->
         <scene sceneID="vgl-c3-KOC">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="fv2-jk-qvn" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Test ? " id="dWa-X9-VXC"/>
+                    <navigationItem key="navigationItem" id="dWa-X9-VXC"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="8iF-jN-Kli">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

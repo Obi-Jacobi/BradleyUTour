@@ -8,10 +8,12 @@
 
 import UIKit
 
-class ChecklistViewController: UIViewController {
+class ChecklistViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var progressBar: UIProgressView!
     @IBOutlet var progressLabel: UILabel!
+    
+    @IBOutlet var tableView:UITableView!
     
     // This is how you call it to reload the progress label location 
     /*
@@ -68,5 +70,20 @@ class ChecklistViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    //MARK: TableViewDelegate
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Unvisited")
+        
+        return cell!
+    }
 
 }
