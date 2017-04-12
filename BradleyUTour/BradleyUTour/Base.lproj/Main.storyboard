@@ -54,7 +54,7 @@
                         <viewControllerLayoutGuide type="bottom" id="gwB-vk-EBP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cXI-JQ-0ET">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bradley University" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCU-Yv-WPE">
@@ -185,8 +185,9 @@
         <scene sceneID="OVx-Gi-B0q">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7lw-Sp-eVz" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="UEN-53-CuY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="UEN-53-CuY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -203,13 +204,13 @@
         <!--Checklist-->
         <scene sceneID="HSG-KB-uZC">
             <objects>
-                <viewController id="914-bt-sUO" sceneMemberID="viewController">
+                <viewController id="914-bt-sUO" customClass="ChecklistViewController" customModule="BradleyUTour" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WJA-Gd-8Zt"/>
                         <viewControllerLayoutGuide type="bottom" id="cZk-Xk-m36"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="O16-t0-ltq">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dt-pe-Tgf">
@@ -335,6 +336,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Checklist" image="Checklist" id="GKb-gQ-5RP"/>
                     <navigationItem key="navigationItem" title="Checklist" id="v3r-5Q-zvs"/>
+                    <connections>
+                        <outlet property="progressBar" destination="GUD-pO-qKc" id="mk9-xi-Tax"/>
+                        <outlet property="progressLabel" destination="gjy-uT-O2J" id="Br6-IM-Sym"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dh0-Rb-g9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -349,7 +354,7 @@
                         <viewControllerLayoutGuide type="bottom" id="HYC-jc-k9z"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OE7-Zh-uQv">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9XC-sj-lqb">
@@ -637,11 +642,13 @@
         <scene sceneID="vgl-c3-KOC">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="fv2-jk-qvn" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Test ? " id="dWa-X9-VXC"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="8iF-jN-Kli">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="8iF-jN-Kli">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <color key="selectedImageTintColor" red="0.64705882349999999" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
