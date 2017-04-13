@@ -13,6 +13,8 @@ class User: Object {
     dynamic var firstName = ""
     dynamic var lastName = ""
     dynamic var email = ""
+    dynamic var tourDate = ""
+    dynamic var surveyResponse = ""
 }
 
 protocol KeyboardDismissable {
@@ -137,12 +139,19 @@ class SignInViewController: UIViewController {
         
         let user = User()
         
-        guard let firstNameText = firstName.text
+        guard let firstNameText = firstName.text, firstNameText != ""
+            else {
+                print("It goes here!!")
+                user.firstName = "This is coming from here"
+                return
+        }
+        user.firstName = "No here"
+        guard let lastNameText = lastName.text, lastNameText != ""
             else {
                 return
         }
-        user.firstName = firstNameText
-        guard let emailText = email.text
+        user.lastName = lastNameText
+        guard let emailText = email.text, emailText != ""
             else {
                 return
         }

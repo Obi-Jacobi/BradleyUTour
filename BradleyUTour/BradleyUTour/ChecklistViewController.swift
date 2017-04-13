@@ -7,6 +7,36 @@
 //
 
 import UIKit
+import RealmSwift
+
+class Landmark: Object {
+    dynamic var name = ""
+    dynamic var visited = false
+    dynamic var landmarkDescription = ""
+    dynamic var latitude:Double = 0.0
+    dynamic var longitude:Double = 0.0
+    dynamic var image = NSData()
+    
+    /*
+    required init() {
+        self.name = ""
+        self.visited = false
+        self.landmarkDescription = ""
+        self.latitude = 0.0
+        self.longitude = 0.0
+        self.image = NSData()
+    }
+    
+    init(name:String, visited:Bool, description:String, latitude:Double, longitude:Double, image:NSData) {
+        self.name = name
+        self.visited = visited
+        self.landmarkDescription = description
+        self.latitude = latitude
+        self.longitude = longitude
+        self.image = image
+    }*/
+    
+}
 
 class ChecklistViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -28,7 +58,13 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let realm = try! Realm()
+        let landmarks = realm.objects(Landmark.self)
         
+        if landmarks.count == 0 {
+            let populator = LandmarkPopulator()
+            populator.populateRealm()
+        }
         
         // Do any additional setup after loading the view.
     }
