@@ -71,8 +71,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         // Drop a pin at user's Current Location
         let myAnnotation: MKPointAnnotation = MKPointAnnotation()
         myAnnotation.coordinate = CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude);
-        myAnnotation.title = "Current location"
+        myAnnotation.title = "You are here!"
         mapView.addAnnotation(myAnnotation)
+        
+        
 //        // update the label text
 //        address.text = "\(locations[0])"
 //        myLocations.append(locations[0] as CLLocation)
