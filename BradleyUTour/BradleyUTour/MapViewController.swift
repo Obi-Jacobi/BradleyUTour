@@ -24,7 +24,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     func addTourDestinations() {
+        // pull destinations from Realm
         
+        // create annotations and add them to the mapView
     }
     
     override func viewDidLoad() {
@@ -43,11 +45,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView.mapType = MKMapType.hybrid
         mapView.showsUserLocation = true
         
+//        addTourDestinations()
+        
         let initialLocation = CLLocation(latitude: 40.698143, longitude: -89.616412)
         centerMapOnLocation(location: (initialLocation))
-        
-        
-        // Display user's current location
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,46 +56,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         // Dispose of any resources that can be recreated.
     }
     
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation
-        
-        // Call stopUpdatingLocation() to stop listening for location updates,
-        // other wise this function will be called every time when user location changes.
-        //manager.stopUpdatingLocation()
-        
-        let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-        
-        mapView.setRegion(region, animated: true)
-        
+
         // Drop a pin at user's Current Location
         let myAnnotation: MKPointAnnotation = MKPointAnnotation()
         myAnnotation.coordinate = CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude);
         myAnnotation.title = "You are here!"
+        
         mapView.addAnnotation(myAnnotation)
-        
-        
-//        // update the label text
-//        address.text = "\(locations[0])"
-//        myLocations.append(locations[0] as CLLocation)
-//        
-//        let spanX = 0.007
-//        let spanY = 0.007
-//        let newRegion = MKCoordinateRegion(center: mapInfo.userLocation.coordinate, span: MKCoordinateSpanMake(spanX, spanY))
-//        mapInfo.setRegion(newRegion, animated: true)
-//        
-//        // for rendering overlay object purpose
-//        if (locations.count > 1) {
-//        let sourceIndex = myLocations.count - 1
-//        let destIndex = myLocations.count - 2
-//        
-//        let srcCoord = myLocations[sourceIndex].coordinate
-//        let destCoord = myLocations[destIndex].coordinate
-//        var srcDestCoord = [srcCoord, destCoord]
-//        let polyLine = MKPolyline(coordinates: &srcDestCoord, count: srcDestCoord.count)
-//        mapInfo.add(polyLine)
-//        }
     }
     
 //    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer  {
