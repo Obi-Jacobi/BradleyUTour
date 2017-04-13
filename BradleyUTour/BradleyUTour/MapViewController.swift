@@ -13,14 +13,18 @@ import MapKit
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     var locManager: CLLocationManager!
-    var myLocations: [CLLocation] = []
-    @IBOutlet weak var mapInfo: MKMapView!
+    var tourDestinations: [CLLocation] = []
+    @IBOutlet weak var mapView: MKMapView!
     
     func centerMapOnLocation(location: CLLocation) {
         let regionRadius: CLLocationDistance = 150
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
                                                                   regionRadius * 2.0, regionRadius * 2.0)
-        mapInfo.setRegion(coordinateRegion, animated: true)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    func addTourDestinations() {
+        
     }
     
     override func viewDidLoad() {
@@ -29,18 +33,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         locManager = CLLocationManager()
         locManager.delegate = self
         locManager.desiredAccuracy = kCLLocationAccuracyBest
-        
         locManager.requestAlwaysAuthorization()
+        
         // update & report user's current location
         locManager.startUpdatingLocation()
         
         // set up the mapview
-        mapInfo.delegate = self
-        mapInfo.mapType = MKMapType.hybrid
-        mapInfo.showsUserLocation = true
+        mapView.delegate = self
+        mapView.mapType = MKMapType.hybrid
+        mapView.showsUserLocation = true
         
         let initialLocation = CLLocation(latitude: 40.698143, longitude: -89.616412)
         centerMapOnLocation(location: (initialLocation))
+        
+        
+        // Display user's current location
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,7 +57,22 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation:CLLocation = locations[0] as CLLocation
         
+        // Call stopUpdatingLocation() to stop listening for location updates,
+        // other wise this function will be called every time when user location changes.
+        //manager.stopUpdatingLocation()
+        
+        let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        
+        mapView.setRegion(region, animated: true)
+        
+        // Drop a pin at user's Current Location
+        let myAnnotation: MKPointAnnotation = MKPointAnnotation()
+        myAnnotation.coordinate = CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude);
+        myAnnotation.title = "Current location"
+        mapView.addAnnotation(myAnnotation)
 //        // update the label text
 //        address.text = "\(locations[0])"
 //        myLocations.append(locations[0] as CLLocation)
@@ -73,13 +95,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 //        }
     }
     
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer  {
-        if (overlay is MKPolyline) {
-            let polyLineRenderer = MKPolylineRenderer(overlay: overlay)
-            polyLineRenderer.strokeColor = UIColor.blue .withAlphaComponent(0.5)
-            polyLineRenderer.lineWidth = 4
-            return polyLineRenderer
-        }
-        return MKPolylineRenderer()
-    }
+//    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer  {
+//        if (overlay is MKPolyline) {
+//            let polyLineRenderer = MKPolylineRenderer(overlay: overlay)
+//            polyLineRenderer.strokeColor = UIColor.blue .withAlphaComponent(0.5)
+//            polyLineRenderer.lineWidth = 4
+//            return polyLineRenderer
+//        }
+//        return MKPolylineRenderer()
+//    }
 }

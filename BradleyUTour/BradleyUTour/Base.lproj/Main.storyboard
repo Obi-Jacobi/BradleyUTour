@@ -45,7 +45,7 @@
             </objects>
             <point key="canvasLocation" x="1649" y="124"/>
         </scene>
-        <!--MAp-->
+        <!--Campus Map-->
         <scene sceneID="Snd-5n-01n">
             <objects>
                 <viewController id="7kx-fu-0VI" customClass="MapViewController" customModule="BradleyUTour" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,29 +57,35 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bradley University" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCU-Yv-WPE">
-                                <rect key="frame" x="118" y="79" width="139" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bradley University" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCU-Yv-WPE">
+                                <rect key="frame" x="79.5" y="20" width="216.5" height="33.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CNS-43-f8R">
-                                <rect key="frame" x="21" y="108" width="333" height="482"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CNS-43-f8R">
+                                <rect key="frame" x="0.0" y="61.5" width="375" height="492.5"/>
                             </mapView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.60711199049999998" green="0.0" blue="0.00048338013579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="CNS-43-f8R" secondAttribute="trailing" id="67c-aP-LWu"/>
+                            <constraint firstItem="CNS-43-f8R" firstAttribute="leading" secondItem="cXI-JQ-0ET" secondAttribute="leading" id="DBd-K1-oH5"/>
+                            <constraint firstItem="DCU-Yv-WPE" firstAttribute="centerX" secondItem="cXI-JQ-0ET" secondAttribute="centerX" id="ITS-e9-peC"/>
+                            <constraint firstItem="gwB-vk-EBP" firstAttribute="top" secondItem="CNS-43-f8R" secondAttribute="bottom" id="bov-cQ-Iwd"/>
+                            <constraint firstItem="DCU-Yv-WPE" firstAttribute="top" secondItem="EMj-6p-xOM" secondAttribute="bottom" constant="20" id="cmj-ND-6HO"/>
+                            <constraint firstItem="CNS-43-f8R" firstAttribute="top" secondItem="DCU-Yv-WPE" secondAttribute="bottom" constant="8" id="lGH-ED-JqR"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="Home" id="flZ-Tg-uHQ"/>
-                    <navigationItem key="navigationItem" title="MAp" id="46k-3U-03B"/>
+                    <navigationItem key="navigationItem" title="Campus Map" id="46k-3U-03B" userLabel="Map"/>
                     <connections>
-                        <outlet property="mapInfo" destination="CNS-43-f8R" id="6vr-Ik-wpx"/>
+                        <outlet property="mapView" destination="CNS-43-f8R" id="V2b-69-Vo6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GVE-Ng-hNS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4239" y="-627"/>
+            <point key="canvasLocation" x="4237.6000000000004" y="-627.4362818590705"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="bQD-io-Z3l">
