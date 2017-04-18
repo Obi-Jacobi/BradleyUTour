@@ -92,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GVE-Ng-hNS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4237.6000000000004" y="-627.4362818590705"/>
+            <point key="canvasLocation" x="4238" y="-378"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="bQD-io-Z3l">
@@ -323,17 +323,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SuV-VS-kNx">
-                                <rect key="frame" x="24" y="182" width="343" height="128"/>
+                                <rect key="frame" x="24" y="182" width="327" height="352"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="VMR-37-OrH"/>
+                                    <constraint firstAttribute="width" constant="327" id="kR6-jW-4ZV"/>
+                                    <constraint firstAttribute="height" constant="352" id="rXj-Nz-3Ek"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Unvisited" id="jOO-Rq-Q3n">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Unvisited" id="jOO-Rq-Q3n" customClass="LandmarkUnvisitedTableViewCell" customModule="BradleyUTour" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="327" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jOO-Rq-Q3n" id="0hN-0s-MZP">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="327" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unvisited Landmark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebe-v1-7lF">
@@ -342,21 +343,30 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visited: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYp-Us-Ap4">
+                                                    <rect key="frame" x="227.5" y="11" width="61.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ebe-v1-7lF" firstAttribute="centerY" secondItem="0hN-0s-MZP" secondAttribute="centerY" id="5ul-IV-zYn"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="DYp-Us-Ap4" secondAttribute="trailing" constant="30" id="LOU-oN-9Mt"/>
+                                                <constraint firstItem="DYp-Us-Ap4" firstAttribute="centerY" secondItem="0hN-0s-MZP" secondAttribute="centerY" id="Wde-V7-QQN"/>
                                                 <constraint firstItem="ebe-v1-7lF" firstAttribute="leading" secondItem="0hN-0s-MZP" secondAttribute="leadingMargin" constant="8" id="nQO-DE-aR5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="landmarkName" destination="ebe-v1-7lF" id="ChQ-IB-RvY"/>
                                             <segue destination="7rl-gH-Lhu" kind="show" id="aLM-X3-EA2"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Visited" id="nYq-Fo-3Xr">
-                                        <rect key="frame" x="0.0" y="72" width="343" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Visited" id="nYq-Fo-3Xr" customClass="LandmarkVisitedTableViewCell" customModule="BradleyUTour" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="327" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nYq-Fo-3Xr" id="Pwn-J4-DaS">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="327" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visited Landmark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyF-vZ-lkx">
@@ -365,21 +375,29 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nIW-ph-nmt">
-                                                    <rect key="frame" x="291" y="4" width="44" height="35"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="Obn-Db-Mxu"/>
-                                                        <constraint firstAttribute="width" constant="44" id="zWX-Vt-3ve"/>
-                                                    </constraints>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Check" translatesAutoresizingMaskIntoConstraints="NO" id="nIW-ph-nmt">
+                                                    <rect key="frame" x="297" y="10.5" width="22" height="22"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visited: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYY-53-xY4">
+                                                    <rect key="frame" x="227.5" y="12" width="61.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="TYY-53-xY4" firstAttribute="centerY" secondItem="Pwn-J4-DaS" secondAttribute="centerY" id="5VC-lB-a2h"/>
                                                 <constraint firstItem="qyF-vZ-lkx" firstAttribute="leading" secondItem="Pwn-J4-DaS" secondAttribute="leadingMargin" constant="8" id="Vhb-QP-fa4"/>
                                                 <constraint firstItem="qyF-vZ-lkx" firstAttribute="centerY" secondItem="Pwn-J4-DaS" secondAttribute="centerY" id="WJr-cb-dg2"/>
+                                                <constraint firstItem="nIW-ph-nmt" firstAttribute="leading" secondItem="TYY-53-xY4" secondAttribute="trailing" constant="8" id="eQJ-Wn-Ylv"/>
                                                 <constraint firstAttribute="trailing" secondItem="nIW-ph-nmt" secondAttribute="trailing" constant="8" id="vvf-do-YHt"/>
                                                 <constraint firstItem="nIW-ph-nmt" firstAttribute="centerY" secondItem="Pwn-J4-DaS" secondAttribute="centerY" id="xBp-A3-aLG"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="landmarkName" destination="qyF-vZ-lkx" id="1Wb-99-6uq"/>
+                                            <outlet property="visitedImageView" destination="nIW-ph-nmt" id="PiB-hI-R5w"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -391,15 +409,14 @@
                         <color key="backgroundColor" red="0.64705882349999999" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="coP-JD-Eyg" firstAttribute="leading" secondItem="O16-t0-ltq" secondAttribute="leadingMargin" constant="8" id="4Vd-Dn-7zw"/>
-                            <constraint firstItem="SuV-VS-kNx" firstAttribute="leading" secondItem="O16-t0-ltq" secondAttribute="leadingMargin" constant="8" id="7sX-g3-UPJ"/>
                             <constraint firstItem="SuV-VS-kNx" firstAttribute="top" secondItem="coP-JD-Eyg" secondAttribute="bottom" constant="8" id="CNR-7k-SIZ"/>
                             <constraint firstItem="hob-Df-Vb3" firstAttribute="top" secondItem="2dt-pe-Tgf" secondAttribute="bottom" constant="8" id="FAB-Aw-77E"/>
                             <constraint firstItem="hob-Df-Vb3" firstAttribute="centerX" secondItem="O16-t0-ltq" secondAttribute="centerX" id="QZ3-m4-doi"/>
                             <constraint firstItem="2dt-pe-Tgf" firstAttribute="top" secondItem="WJA-Gd-8Zt" secondAttribute="bottom" constant="50" id="RQF-0c-5BO"/>
                             <constraint firstItem="coP-JD-Eyg" firstAttribute="top" secondItem="WJA-Gd-8Zt" secondAttribute="bottom" constant="150" id="Rnj-oX-9dV"/>
+                            <constraint firstItem="SuV-VS-kNx" firstAttribute="centerX" secondItem="O16-t0-ltq" secondAttribute="centerX" id="RwB-MK-BJo"/>
                             <constraint firstItem="mfg-tA-hLJ" firstAttribute="centerY" secondItem="coP-JD-Eyg" secondAttribute="centerY" id="Uid-sS-mYJ"/>
                             <constraint firstItem="2dt-pe-Tgf" firstAttribute="centerX" secondItem="O16-t0-ltq" secondAttribute="centerX" id="YYm-Fm-XFb"/>
-                            <constraint firstItem="SuV-VS-kNx" firstAttribute="trailing" secondItem="O16-t0-ltq" secondAttribute="trailingMargin" constant="8" id="hq0-Sy-fRy"/>
                             <constraint firstItem="mfg-tA-hLJ" firstAttribute="leading" secondItem="coP-JD-Eyg" secondAttribute="trailing" constant="15" id="q6i-uq-keV"/>
                         </constraints>
                     </view>
@@ -413,7 +430,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dh0-Rb-g9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4239" y="264"/>
+            <point key="canvasLocation" x="4237.6000000000004" y="263.11844077961024"/>
         </scene>
         <!--Checklist-->
         <scene sceneID="txY-Kv-EVA">
@@ -813,7 +830,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porttitor arcu
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Coi-nC-2x5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3505" y="907"/>
+            <point key="canvasLocation" x="3505" y="804"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="vgl-c3-KOC">
@@ -842,6 +859,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porttitor arcu
     </scenes>
     <resources>
         <image name="Bradley" width="168" height="114"/>
+        <image name="Check" width="22" height="22"/>
         <image name="Checklist" width="28" height="31"/>
         <image name="Home" width="28" height="31"/>
         <image name="Rewards" width="28" height="31"/>

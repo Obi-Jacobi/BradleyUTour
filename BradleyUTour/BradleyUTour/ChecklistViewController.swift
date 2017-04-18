@@ -59,6 +59,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         
         let realm = try! Realm()
+        
         let landmarks = realm.objects(Landmark.self)
         
         if landmarks.count == 0 {
@@ -77,18 +78,8 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         let progressWidth = Float(barRect.width) * barValue
         var newLabelRect = labelRect
         newLabelRect.origin.x = CGFloat(progressWidth/2) - (labelRect.width / 2)
-        //newLabelRect.midX
-       
         
         progressLabel.frame = newLabelRect
-        
-        /*
-        print(barRect)
-        print(progressWidth)
-        print(labelRect)
-        print(labelRect.width)
-        print(newLabelRect)
-        print(newLabelRect.midX)*/
     }
 
     override func didReceiveMemoryWarning() {
@@ -113,13 +104,27 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        let realm = try! Realm()
+        let landmarks = realm.objects(Landmark.self)
+        
+        return landmarks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Unvisited")
+        let unvisitedCell = tableView.dequeueReusableCell(withIdentifier: "Unvisited") as! LandmarkUnvisitedTableViewCell
+        let visitedCell = tableView.dequeueReusableCell(withIdentifier: "Visited") as! LandmarkVisitedTableViewCell
         
-        return cell!
+        let realm = try! Realm()
+        let landmarks = realm.objects(Landmark.self)
+        
+        if landmarks[indexPath.row].visited {
+            visitedCell.landmarkName.text = landmarks[indexPath.row].name
+            return visitedCell
+        }
+        else {
+            unvisitedCell.landmarkName.text = landmarks[indexPath.row].name
+            return unvisitedCell
+        }
     }
 
 }
