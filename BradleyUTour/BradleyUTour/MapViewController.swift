@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import MapKit
+import RealmSwift
 
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
@@ -25,7 +26,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func addTourDestinations() {
         // pull destinations from Realm
+        let realm = try! Realm()
+        let landmarks = realm.objects(Landmark.self)
         
+//        for landmark in landmarks {
+//            mapView.addAnnotation(landmark)
+//        }
+        
+//        mapView.addAnnotations(landmarks)
         // create annotations and add them to the mapView
     }
     
@@ -45,7 +53,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView.mapType = MKMapType.hybrid
         mapView.showsUserLocation = true
         
-//        addTourDestinations()
+        addTourDestinations()
         
         let initialLocation = CLLocation(latitude: 40.698143, longitude: -89.616412)
         centerMapOnLocation(location: (initialLocation))
