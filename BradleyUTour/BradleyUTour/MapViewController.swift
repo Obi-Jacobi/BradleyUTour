@@ -13,6 +13,8 @@ import RealmSwift
 
 class LandmarkPointAnnotation : MKPointAnnotation {
     var pinColor: UIColor?
+    var visited: Bool?
+    // TODO: could add identifying info here (id etc)
 }
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
@@ -28,7 +30,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     func addTourDestinations() {
-        // pull destinations from Realm
+        // Pull landmarks from Realm
         let realm = try! Realm()
         let landmarks = realm.objects(Landmark.self)
         
@@ -36,7 +38,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let annotation = LandmarkPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2DMake(landmark.latitude, landmark.longitude)
             
-            // only display the landmark name if it has been visited?
+            // Only display landmark name if it has been visited
             if landmark.visited {
                 annotation.title = landmark.name
             } else{
@@ -44,12 +46,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 annotation.pinColor = UIColor.gray
             }
             
+            annotation.visited = landmark.visited
             mapView.addAnnotation(annotation)
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.topItem?.title = "Home"
     }
     
     override func viewDidLoad() {
@@ -60,23 +59,40 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         locManager.desiredAccuracy = kCLLocationAccuracyBest
         locManager.requestAlwaysAuthorization()
         
-        // update & report user's current location
+        // Update & report user's current location
         locManager.startUpdatingLocation()
         
-        // set up the mapview
+        // Set up the mapview
         mapView.delegate = self
         mapView.mapType = MKMapType.hybrid
         mapView.showsUserLocation = true
         
         addTourDestinations()
         
-        let initialLocation = CLLocation(latitude: 40.698143, longitude: -89.616412)
-        centerMapOnLocation(location: (initialLocation))
+        centerMapOnLocation(location: CLLocation(latitude: 40.698143, longitude: -89.616412))
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "LandmarkSelect" {
+            let destination = segue.destination as! LandmarkViewController
+            
+            // TODO: Decide if we grab the landmarks again from Realm OR just store them
+            //  inside the LandmarkPointAnnotation
+            let realm = try! Realm()
+            let landmarks = realm.objects(Landmark.self)
+            let landmarkName = (sender as! MKAnnotationView).annotation!.title
+            
+            if let i = landmarks.index(where: {$0.name == landmarkName!}) {
+                destination.landmark = landmarks[i]
+            }
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -98,12 +114,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             dequeuedView.annotation = annotation
             view = dequeuedView
         } else {
+            // Insert the button to the landmark details page
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             view.canShowCallout = true
             view.calloutOffset = CGPoint(x: -5, y: 5)
-            view.rightCalloutAccessoryView = UIButton(type:.detailDisclosure) as UIView
+            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure) as UIView
         }
         
+        // Change the color of the unvisited landmarks
         if annotation.title! == "???" {
             let annotation = annotation as! LandmarkPointAnnotation
             view.pinTintColor = annotation.pinColor
@@ -111,4 +129,20 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         return view
     }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let annotation = view.annotation as! LandmarkPointAnnotation
+        
+        // Only display the landmark's detail page if the user has visited that location
+        if annotation.visited! {
+            if control == view.rightCalloutAccessoryView {
+                performSegue(withIdentifier: "LandmarkSelect", sender: view)
+            }
+        } else {
+            let ac = UIAlertController(title: "Hol' up!", message: "You haven't visited this place yet.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
+    }
+
 }
