@@ -13,8 +13,7 @@ import RealmSwift
 
 class LandmarkPointAnnotation : MKPointAnnotation {
     var pinColor: UIColor?
-    var visited: Bool?
-    // TODO: could add identifying info here (id etc)
+    var landmark: Landmark?
 }
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
@@ -39,14 +38,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             annotation.coordinate = CLLocationCoordinate2DMake(landmark.latitude, landmark.longitude)
             
             // Only display landmark name if it has been visited
-            if !landmark.visited {
+            if landmark.visited {
                 annotation.title = landmark.name
             } else{
                 annotation.title = "???"
                 annotation.pinColor = UIColor.gray
             }
             
-            annotation.visited = !landmark.visited
+            annotation.landmark = landmark
             mapView.addAnnotation(annotation)
         }
     }
@@ -86,16 +85,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         // Pass the selected object to the new view controller.
         if segue.identifier == "LandmarkSelect" {
             let destination = segue.destination as! LandmarkViewController
+            let landmarkAnnotation = (sender as! MKAnnotationView).annotation as! LandmarkPointAnnotation
             
-            // TODO: Decide if we grab the landmarks again from Realm OR just store them
-            //  inside the LandmarkPointAnnotation
-            let realm = try! Realm()
-            let landmarks = realm.objects(Landmark.self)
-            let landmarkName = (sender as! MKAnnotationView).annotation!.title
-            
-            if let i = landmarks.index(where: {$0.name == landmarkName!}) {
-                destination.landmark = landmarks[i]
-            }
+            destination.landmark = landmarkAnnotation.landmark
         }
     }
     
@@ -138,7 +130,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let annotation = view.annotation as! LandmarkPointAnnotation
         
         // Only display the landmark's detail page if the user has visited that location
-        if annotation.visited! {
+        if (annotation.landmark?.visited)! {
             if control == view.rightCalloutAccessoryView {
                 performSegue(withIdentifier: "LandmarkSelect", sender: view)
             }
