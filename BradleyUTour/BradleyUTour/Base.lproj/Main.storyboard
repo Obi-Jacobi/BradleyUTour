@@ -297,7 +297,7 @@
                                         <color key="progressTintColor" red="0.64705882349999999" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="trackTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </progressView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.3%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjy-uT-O2J">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.3%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjy-uT-O2J">
                                         <rect key="frame" x="101.5" y="5" width="37.5" height="21"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -354,17 +354,9 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visited: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYp-Us-Ap4">
-                                                    <rect key="frame" x="227.5" y="11" width="61.5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ebe-v1-7lF" firstAttribute="centerY" secondItem="0hN-0s-MZP" secondAttribute="centerY" id="5ul-IV-zYn"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="DYp-Us-Ap4" secondAttribute="trailing" constant="30" id="LOU-oN-9Mt"/>
-                                                <constraint firstItem="DYp-Us-Ap4" firstAttribute="centerY" secondItem="0hN-0s-MZP" secondAttribute="centerY" id="Wde-V7-QQN"/>
                                                 <constraint firstItem="ebe-v1-7lF" firstAttribute="leading" secondItem="0hN-0s-MZP" secondAttribute="leadingMargin" constant="8" id="nQO-DE-aR5"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -877,6 +869,6 @@
         <image name="Rewards" width="28" height="31"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EGt-2R-YtA"/>
+        <segue reference="gbv-ty-K2N"/>
     </inferredMetricsTieBreakers>
 </document>

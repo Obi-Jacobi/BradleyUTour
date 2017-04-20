@@ -141,7 +141,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
             return visitedCell
         }
         else {
-            unvisitedCell.landmarkName.text = landmarks[indexPath.row].name
+            unvisitedCell.landmarkName.text = "???"
             return unvisitedCell
         }
     }
