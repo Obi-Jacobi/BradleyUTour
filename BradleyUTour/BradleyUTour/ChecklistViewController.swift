@@ -16,32 +16,13 @@ class Landmark: Object {
     dynamic var latitude:Double = 0.0
     dynamic var longitude:Double = 0.0
     dynamic var image = NSData()
-    
-    /*
-    required init() {
-        self.name = ""
-        self.visited = false
-        self.landmarkDescription = ""
-        self.latitude = 0.0
-        self.longitude = 0.0
-        self.image = NSData()
-    }
-    
-    init(name:String, visited:Bool, description:String, latitude:Double, longitude:Double, image:NSData) {
-        self.name = name
-        self.visited = visited
-        self.landmarkDescription = description
-        self.latitude = latitude
-        self.longitude = longitude
-        self.image = image
-    }*/
-    
 }
 
 class ChecklistViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var progressBar: UIProgressView!
     @IBOutlet var progressLabel: UILabel!
+    @IBOutlet var visitedLabel: UILabel!
     
     @IBOutlet var tableView:UITableView!
     
@@ -70,7 +51,29 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidLayoutSubviews() {
+    override func viewDidAppear(_ animated: Bool) {
+        let realm = try! Realm()
+        
+        let landmarks = realm.objects(Landmark.self)
+        
+        var visitedCount = 0
+        for landmark in landmarks {
+            if landmark.visited {
+                visitedCount += 1
+            }
+        }
+        visitedLabel.text = "\(visitedCount)/\(landmarks.count)"
+        let progressPercent = Double(visitedCount)/Double(landmarks.count)
+        progressBar.progress = Float(progressPercent)
+        let progressPercent100 = progressPercent*100
+        progressLabel.text = "\(progressPercent100)%"
+        
+        tableView.reloadData()
+        updateProgress()
+        updateProgress()
+    }
+    
+    func updateProgress() {
         let barRect = progressBar.frame
         let labelRect = progressLabel.frame
         let barValue = progressBar.progress
@@ -80,6 +83,10 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         newLabelRect.origin.x = CGFloat(progressWidth/2) - (labelRect.width / 2)
         
         progressLabel.frame = newLabelRect
+    }
+    
+    override func viewDidLayoutSubviews() {
+        
     }
 
     override func didReceiveMemoryWarning() {
