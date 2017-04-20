@@ -26,15 +26,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func addTourDestinations() {
         // pull destinations from Realm
-        let realm = try! Realm()
-        let landmarks = realm.objects(Landmark.self)
-        
+//        let realm = try! Realm()
+//        let landmarks = realm.objects(Landmark.self)
+//        
 //        for landmark in landmarks {
-//            mapView.addAnnotation(landmark)
+//            let annotation = MKAnnotation(coordinate: CLLocationCoordinate2DMake(landmark.latitude, landmark.longitude),
+//                                          title: landmark.name)
+//            mapView.addAnnotation(annotation)
 //        }
-        
-//        mapView.addAnnotations(landmarks)
-        // create annotations and add them to the mapView
     }
     
     override func viewDidLoad() {
@@ -75,6 +74,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView.addAnnotation(myAnnotation)
     }
     
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+//        if let annotation = annotation {
+            let identifier = "pin"
+            var view: MKPinAnnotationView
+            if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+                as? MKPinAnnotationView {
+                dequeuedView.annotation = annotation
+                view = dequeuedView
+            } else {
+                view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                view.canShowCallout = true
+                view.calloutOffset = CGPoint(x: -5, y: 5)
+                view.rightCalloutAccessoryView = UIButton(type:.detailDisclosure) as UIView
+            }
+            return view
+//        }
+//        return nil
+    }
 //    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer  {
 //        if (overlay is MKPolyline) {
 //            let polyLineRenderer = MKPolylineRenderer(overlay: overlay)
