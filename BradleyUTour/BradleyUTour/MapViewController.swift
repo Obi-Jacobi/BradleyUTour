@@ -13,6 +13,7 @@ import RealmSwift
 
 class LandmarkPointAnnotation : MKPointAnnotation {
     var pinColor: UIColor?
+    // TODO: could add identifying info here (id etc)
 }
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
@@ -75,6 +76,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation
 
@@ -97,7 +103,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             view.canShowCallout = true
             view.calloutOffset = CGPoint(x: -5, y: 5)
-            view.rightCalloutAccessoryView = UIButton(type:.detailDisclosure) as UIView
+            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure) as UIView
         }
         
         if annotation.title! == "???" {
@@ -107,4 +113,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         return view
     }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+//        let capital = view.annotation as! Capital
+//        let placeName = capital.title
+//        let placeInfo = capital.info
+//        
+//        let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
+//        ac.addAction(UIAlertAction(title: "OK", style: .default))
+//        present(ac, animated: true)
+        performSegue(withIdentifier: "LandmarkSelect", sender: self)
+    }
+
 }
