@@ -39,14 +39,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             annotation.coordinate = CLLocationCoordinate2DMake(landmark.latitude, landmark.longitude)
             
             // Only display landmark name if it has been visited
-            if landmark.visited {
+            if !landmark.visited {
                 annotation.title = landmark.name
             } else{
                 annotation.title = "???"
                 annotation.pinColor = UIColor.gray
             }
             
-            annotation.visited = landmark.visited
+            annotation.visited = !landmark.visited
             mapView.addAnnotation(annotation)
         }
     }

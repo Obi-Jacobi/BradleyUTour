@@ -70,8 +70,16 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CNS-43-f8R">
-                                <rect key="frame" x="0.0" y="61.5" width="375" height="492.5"/>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bg6-QY-8J8">
+                                <rect key="frame" x="16" y="21" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="7rl-gH-Lhu" kind="show" identifier="LandmarkSelect" id="EGt-2R-YtA"/>
+                                </connections>
+                            </button>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CNS-43-f8R">
+                                <rect key="frame" x="0.0" y="59" width="375" height="492.5"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="0.60711199049999998" green="0.0" blue="0.00048338013579999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -869,6 +877,6 @@
         <image name="Rewards" width="28" height="31"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gbv-ty-K2N"/>
+        <segue reference="EGt-2R-YtA"/>
     </inferredMetricsTieBreakers>
 </document>
