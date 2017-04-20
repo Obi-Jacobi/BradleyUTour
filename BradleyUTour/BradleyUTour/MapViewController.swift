@@ -72,6 +72,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         centerMapOnLocation(location: CLLocation(latitude: 40.698143, longitude: -89.616412))
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.topItem?.title = "Home"
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -45,15 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window = UIWindow(frame: UIScreen.main.bounds)
             let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
             
-            /*
-            let map = storyboard.instantiateViewController(withIdentifier: "Map") as! MapViewController
-            let check = storyboard.instantiateViewController(withIdentifier: "Check") as! ChecklistViewController
-            let rewards = storyboard.instantiateViewController(withIdentifier: "Rewards") as! RewardsViewController
-            
-            let tab = UITabBarController.init()
-            tab.viewControllers = [map, check, rewards]
-            let nav = UINavigationController.init(rootViewController: tab)
-            */
             let nav = storyboard.instantiateViewController(withIdentifier: "Nav")
             
             self.window?.rootViewController = nav
