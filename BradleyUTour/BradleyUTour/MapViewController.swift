@@ -79,6 +79,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "LandmarkSelect" {
+            let destination = segue.destination as! LandmarkViewController
+            
+            let realm = try! Realm()
+            let landmarks = realm.objects(Landmark.self)
+            
+            // TODO: tell this which landmark we want to see
+            //destination.landmark = landmarks[]
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -122,6 +131,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 //        let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
 //        ac.addAction(UIAlertAction(title: "OK", style: .default))
 //        present(ac, animated: true)
+        
         performSegue(withIdentifier: "LandmarkSelect", sender: self)
     }
 
