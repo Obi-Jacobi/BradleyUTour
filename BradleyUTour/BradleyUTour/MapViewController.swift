@@ -11,6 +11,9 @@ import CoreLocation
 import MapKit
 import RealmSwift
 
+class LandmarkPointAnnotation : MKPointAnnotation {
+    var pinColor: UIColor?
+}
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     var locManager: CLLocationManager!
@@ -30,8 +33,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let landmarks = realm.objects(Landmark.self)
         
         for landmark in landmarks {
-            let annotation = MKPointAnnotation()
+            let annotation = LandmarkPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2DMake(landmark.latitude, landmark.longitude)
+            
+            // only display the landmark name if it has been visited?
+            if landmark.visited {
+                annotation.title = landmark.name
+            } else{
+                annotation.title = "???"
+                annotation.pinColor = UIColor.gray
+            }
+            
             mapView.addAnnotation(annotation)
         }
     }
@@ -75,30 +87,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        if let annotation = annotation {
-            let identifier = "pin"
-            var view: MKPinAnnotationView
-            if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
-                as? MKPinAnnotationView {
-                dequeuedView.annotation = annotation
-                view = dequeuedView
-            } else {
-                view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-                view.canShowCallout = true
-                view.calloutOffset = CGPoint(x: -5, y: 5)
-                view.rightCalloutAccessoryView = UIButton(type:.detailDisclosure) as UIView
-            }
-            return view
-//        }
-//        return nil
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "myAnnotation") as? MKPinAnnotationView
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myAnnotation")
+        } else {
+            annotationView?.annotation = annotation
+        }
+        
+        if annotation.title! == "???" {
+            let annotation = annotation as! LandmarkPointAnnotation
+            annotationView?.pinTintColor = annotation.pinColor
+        }
+        
+        return annotationView
     }
-//    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer  {
-//        if (overlay is MKPolyline) {
-//            let polyLineRenderer = MKPolylineRenderer(overlay: overlay)
-//            polyLineRenderer.strokeColor = UIColor.blue .withAlphaComponent(0.5)
-//            polyLineRenderer.lineWidth = 4
-//            return polyLineRenderer
-//        }
-//        return MKPolylineRenderer()
-//    }
 }
