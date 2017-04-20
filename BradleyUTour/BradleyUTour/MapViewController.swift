@@ -87,19 +87,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "myAnnotation") as? MKPinAnnotationView
+        let identifier = "pin"
+        var view: MKPinAnnotationView
         
-        if annotationView == nil {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "myAnnotation")
+        if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView {
+            dequeuedView.annotation = annotation
+            view = dequeuedView
         } else {
-            annotationView?.annotation = annotation
+            view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            view.canShowCallout = true
+            view.calloutOffset = CGPoint(x: -5, y: 5)
+            view.rightCalloutAccessoryView = UIButton(type:.detailDisclosure) as UIView
         }
         
         if annotation.title! == "???" {
             let annotation = annotation as! LandmarkPointAnnotation
-            annotationView?.pinTintColor = annotation.pinColor
+            view.pinTintColor = annotation.pinColor
         }
         
-        return annotationView
+        return view
     }
 }
