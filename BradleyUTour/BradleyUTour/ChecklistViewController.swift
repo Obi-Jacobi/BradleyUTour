@@ -95,15 +95,25 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "UnvisitedSelected" || segue.identifier == "VisitedSelected" {
+            let destination = segue.destination as! LandmarkViewController
+            
+            let realm = try! Realm()
+            let landmarks = realm.objects(Landmark.self)
+            
+            destination.landmark = landmarks[(tableView.indexPathForSelectedRow?.row)!]
+        }
     }
-    */
+    
+    @IBAction func unwind(segue:UIStoryboardSegue) {/*Empty unwindSegue*/}
+    
     
     //MARK: TableViewDelegate
     func numberOfSections(in tableView: UITableView) -> Int {

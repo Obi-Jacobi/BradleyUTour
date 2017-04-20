@@ -136,29 +136,32 @@ class SignInViewController: UIViewController {
     
     @IBAction func startButtonPressed(_ sender: UIButton) {
         let realm = try! Realm()
+        let users = realm.objects(User.self)
         
-        let user = User()
-        
-        guard let firstNameText = firstName.text, firstNameText != ""
-            else {
-                print("It goes here!!")
-                user.firstName = "This is coming from here"
-                return
-        }
-        user.firstName = "No here"
-        guard let lastNameText = lastName.text, lastNameText != ""
-            else {
-                return
-        }
-        user.lastName = lastNameText
-        guard let emailText = email.text, emailText != ""
-            else {
-                return
-        }
-        user.email = emailText
-        
-        try! realm.write {
-            realm.add(user)
+        if users.count == 0 {
+            let user = User()
+            
+            guard let firstNameText = firstName.text, firstNameText != ""
+                else {
+                    print("It goes here!!")
+                    user.firstName = "This is coming from here"
+                    return
+            }
+            user.firstName = firstNameText
+            guard let lastNameText = lastName.text, lastNameText != ""
+                else {
+                    return
+            }
+            user.lastName = lastNameText
+            guard let emailText = email.text, emailText != ""
+                else {
+                    return
+            }
+            user.email = emailText
+            
+            try! realm.write {
+                realm.add(user)
+            }
         }
     }
     
