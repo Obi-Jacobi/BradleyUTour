@@ -338,7 +338,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unvisited Landmark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebe-v1-7lF">
-                                                    <rect key="frame" x="16" y="11" width="152" height="21"/>
+                                                    <rect key="frame" x="16" y="11" width="204" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="204" id="ls8-Yx-vhc"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -370,7 +373,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visited Landmark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyF-vZ-lkx">
-                                                    <rect key="frame" x="16" y="11.5" width="133" height="21"/>
+                                                    <rect key="frame" x="16" y="12" width="204" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="204" id="wfg-TW-6L0"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -426,6 +432,7 @@
                         <outlet property="progressBar" destination="GUD-pO-qKc" id="mk9-xi-Tax"/>
                         <outlet property="progressLabel" destination="gjy-uT-O2J" id="Br6-IM-Sym"/>
                         <outlet property="tableView" destination="SuV-VS-kNx" id="zLq-jb-YFh"/>
+                        <outlet property="visitedLabel" destination="coP-JD-Eyg" id="qzA-Q9-fWb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dh0-Rb-g9l" userLabel="First Responder" sceneMemberID="firstResponder"/>
