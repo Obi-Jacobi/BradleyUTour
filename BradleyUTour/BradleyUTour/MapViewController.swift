@@ -12,7 +12,6 @@ import MapKit
 import RealmSwift
 
 class LandmarkPointAnnotation : MKPointAnnotation {
-    var pinColor: UIColor?
     var landmark: Landmark?
 }
 
@@ -38,12 +37,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             annotation.coordinate = CLLocationCoordinate2DMake(landmark.latitude, landmark.longitude)
             
             // Only display landmark name if it has been visited
-            if landmark.visited {
-                annotation.title = landmark.name
-            } else{
-                annotation.title = "???"
-                annotation.pinColor = UIColor.gray
-            }
+            annotation.title = (landmark.visited) ? landmark.name : "???"
             
             annotation.landmark = landmark
             mapView.addAnnotation(annotation)
@@ -119,8 +113,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         // Change the color of the unvisited landmarks
         if annotation.title! == "???" {
-            let annotation = annotation as! LandmarkPointAnnotation
-            view.pinTintColor = annotation.pinColor
+            view.pinTintColor = UIColor.gray
         }
         
         return view
