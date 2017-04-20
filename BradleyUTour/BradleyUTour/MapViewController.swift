@@ -13,6 +13,7 @@ import RealmSwift
 
 class LandmarkPointAnnotation : MKPointAnnotation {
     var pinColor: UIColor?
+    var visited: Bool?
     // TODO: could add identifying info here (id etc)
 }
 
@@ -45,6 +46,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 annotation.pinColor = UIColor.gray
             }
             
+            annotation.visited = landmark.visited
             mapView.addAnnotation(annotation)
         }
     }
@@ -84,9 +86,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             let realm = try! Realm()
             let landmarks = realm.objects(Landmark.self)
+            let landmarkName = (sender as! MKAnnotationView).annotation!.title
             
-            // TODO: tell this which landmark we want to see
-            //destination.landmark = landmarks[]
+            if let i = landmarks.index(where: {$0.name == landmarkName!}) {
+                destination.landmark = landmarks[i]
+            }
         }
     }
     
@@ -124,15 +128,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-//        let capital = view.annotation as! Capital
-//        let placeName = capital.title
-//        let placeInfo = capital.info
-//        
-//        let ac = UIAlertController(title: placeName, message: placeInfo, preferredStyle: .alert)
-//        ac.addAction(UIAlertAction(title: "OK", style: .default))
-//        present(ac, animated: true)
-        
-        performSegue(withIdentifier: "LandmarkSelect", sender: self)
+        let annotation = view.annotation as! LandmarkPointAnnotation
+        if annotation.visited! {
+            if control == view.rightCalloutAccessoryView {
+                performSegue(withIdentifier: "LandmarkSelect", sender: view)
+            }
+        } else {
+            let ac = UIAlertController(title: "Hol' up!", message: "You haven't visited this place yet.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
     }
 
 }
