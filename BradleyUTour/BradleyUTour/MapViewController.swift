@@ -26,14 +26,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func addTourDestinations() {
         // pull destinations from Realm
-//        let realm = try! Realm()
-//        let landmarks = realm.objects(Landmark.self)
-//        
-//        for landmark in landmarks {
-//            let annotation = MKAnnotation(coordinate: CLLocationCoordinate2DMake(landmark.latitude, landmark.longitude),
-//                                          title: landmark.name)
-//            mapView.addAnnotation(annotation)
-//        }
+        let realm = try! Realm()
+        let landmarks = realm.objects(Landmark.self)
+        
+        for landmark in landmarks {
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2DMake(landmark.latitude, landmark.longitude)
+            mapView.addAnnotation(annotation)
+        }
     }
     
     override func viewDidLoad() {
