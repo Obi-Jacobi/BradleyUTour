@@ -143,24 +143,31 @@ class SignInViewController: UIViewController {
             
             guard let firstNameText = firstName.text, firstNameText != ""
                 else {
-                    print("It goes here!!")
-                    user.firstName = "This is coming from here"
+                    let ac = UIAlertController(title: "First Name Not Valid", message: "That is not a valid first name, try again!", preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .default))
+                    present(ac, animated: true)
                     return
             }
             user.firstName = firstNameText
             guard let lastNameText = lastName.text, lastNameText != ""
                 else {
+                    let ac = UIAlertController(title: "Last Name Not Valid", message: "That is not a valid last name, try again!", preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .default))
+                    present(ac, animated: true)
                     return
             }
             user.lastName = lastNameText
             guard let emailText = email.text, emailText != ""
                 else {
+                    let ac = UIAlertController(title: "Email Not Valid", message: "That is not a valid email, try again!", preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .default))
+                    present(ac, animated: true)
                     return
             }
             user.email = emailText
-            
             try! realm.write {
                 realm.add(user)
+                performSegue(withIdentifier: "GoToTut", sender: self)
             }
         }
     }
@@ -190,14 +197,22 @@ class SignInViewController: UIViewController {
     }
     
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "GoToTut" {
+            return false
+        }
+        return true
+    }
 }
