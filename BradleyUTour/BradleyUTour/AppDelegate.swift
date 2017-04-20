@@ -39,7 +39,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Now that we've told Realm how to handle the schema change, opening the file
         // will automatically perform the migration
         let realm = try! Realm()
+        let users = realm.objects(User.self)
         
+        if users.count > 0 {
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            
+            /*
+            let map = storyboard.instantiateViewController(withIdentifier: "Map") as! MapViewController
+            let check = storyboard.instantiateViewController(withIdentifier: "Check") as! ChecklistViewController
+            let rewards = storyboard.instantiateViewController(withIdentifier: "Rewards") as! RewardsViewController
+            
+            let tab = UITabBarController.init()
+            tab.viewControllers = [map, check, rewards]
+            let nav = UINavigationController.init(rootViewController: tab)
+            */
+            let nav = storyboard.instantiateViewController(withIdentifier: "Nav")
+            
+            self.window?.rootViewController = nav
+            
+            self.window?.makeKeyAndVisible()
+        }
         
         // Override point for customization after application launch.
         return true

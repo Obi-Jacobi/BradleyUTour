@@ -15,8 +15,6 @@ class RewardsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.topItem?.title = "Rewards"
-        
         for (index, reward) in rewards.enumerated() {
             reward.layer.cornerRadius = 50
             
@@ -37,6 +35,10 @@ class RewardsViewController: UIViewController {
         }
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.topItem?.title = "Rewards"
     }
 
     override func didReceiveMemoryWarning() {

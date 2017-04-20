@@ -48,6 +48,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.topItem?.title = "Home"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -52,6 +52,8 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.topItem?.title = "Checklist"
+        
         let realm = try! Realm()
         
         let landmarks = realm.objects(Landmark.self)
