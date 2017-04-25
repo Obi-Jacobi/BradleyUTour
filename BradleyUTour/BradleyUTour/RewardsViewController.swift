@@ -38,7 +38,7 @@ class RewardsViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.topItem?.title = "Rewards"
+        //self.navigationController?.navigationBar.topItem?.title = "Rewards"
     }
 
     override func didReceiveMemoryWarning() {
