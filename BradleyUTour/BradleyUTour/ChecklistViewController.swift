@@ -104,13 +104,18 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "UnvisitedSelected" || segue.identifier == "VisitedSelected" {
+        if segue.identifier == "VisitedSelected" {
             let destination = segue.destination as! LandmarkViewController
             
             let realm = try! Realm()
             let landmarks = realm.objects(Landmark.self)
             
             destination.landmark = landmarks[(tableView.indexPathForSelectedRow?.row)!]
+        }
+        if segue.identifier == "UnvisitedSelected" {
+            let ac = UIAlertController(title: "Unvisited Location", message: "You have not visited this location yet, keep searching!", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
         }
     }
     
@@ -134,7 +139,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         let visitedCell = tableView.dequeueReusableCell(withIdentifier: "Visited") as! LandmarkVisitedTableViewCell
         
         let realm = try! Realm()
-        let landmarks = realm.objects(Landmark.self)
+        let landmarks = realm.objects(Landmark.self).sorted(byKeyPath: "visited", ascending: false)
         
         if landmarks[indexPath.row].visited {
             visitedCell.landmarkName.text = landmarks[indexPath.row].name

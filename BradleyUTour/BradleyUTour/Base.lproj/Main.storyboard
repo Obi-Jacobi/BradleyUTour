@@ -344,7 +344,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="327" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Unvisited Landmark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebe-v1-7lF">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebe-v1-7lF">
                                                     <rect key="frame" x="16" y="11" width="204" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="204" id="ls8-Yx-vhc"/>
@@ -383,18 +383,10 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Check" translatesAutoresizingMaskIntoConstraints="NO" id="nIW-ph-nmt">
                                                     <rect key="frame" x="297" y="11" width="22" height="22"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visited: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYY-53-xY4">
-                                                    <rect key="frame" x="227" y="11" width="62" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="TYY-53-xY4" firstAttribute="centerY" secondItem="Pwn-J4-DaS" secondAttribute="centerY" id="5VC-lB-a2h"/>
                                                 <constraint firstItem="qyF-vZ-lkx" firstAttribute="leading" secondItem="Pwn-J4-DaS" secondAttribute="leadingMargin" constant="8" id="Vhb-QP-fa4"/>
                                                 <constraint firstItem="qyF-vZ-lkx" firstAttribute="centerY" secondItem="Pwn-J4-DaS" secondAttribute="centerY" id="WJr-cb-dg2"/>
-                                                <constraint firstItem="nIW-ph-nmt" firstAttribute="leading" secondItem="TYY-53-xY4" secondAttribute="trailing" constant="8" id="eQJ-Wn-Ylv"/>
                                                 <constraint firstAttribute="trailing" secondItem="nIW-ph-nmt" secondAttribute="trailing" constant="8" id="vvf-do-YHt"/>
                                                 <constraint firstItem="nIW-ph-nmt" firstAttribute="centerY" secondItem="Pwn-J4-DaS" secondAttribute="centerY" id="xBp-A3-aLG"/>
                                             </constraints>
