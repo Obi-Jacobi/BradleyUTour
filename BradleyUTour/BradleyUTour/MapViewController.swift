@@ -163,9 +163,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 performSegue(withIdentifier: "LandmarkSelect", sender: view)
             }
         } else {
-            let ac = UIAlertController(title: "Hol' up!", message: "You haven't visited this place yet.", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
-            present(ac, animated: true)
+            showAlert(withTitle: "UnvisitedLocation", message: "You have not visited this location yet, keep searching!")
         }
     }
 }
