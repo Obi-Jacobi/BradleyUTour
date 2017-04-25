@@ -13,6 +13,7 @@ import RealmSwift
 
 class LandmarkPointAnnotation : MKPointAnnotation {
     var landmark: Landmark?
+    let radius = 25
 }
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
@@ -41,6 +42,38 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             annotation.landmark = landmark
             mapView.addAnnotation(annotation)
+        }
+    }
+    
+    func region(withLandmark landmarkPointAnnotation: LandmarkPointAnnotation) -> CLCircularRegion {
+        let landmark = landmarkPointAnnotation.landmark
+        let coordinate = CLLocationCoordinate2D(latitude: (landmark?.latitude)!, longitude: (landmark?.longitude)!)
+        
+        let region = CLCircularRegion(center: coordinate, radius: CLLocationDistance(landmarkPointAnnotation.radius), identifier: (landmark?.name)!)
+        
+        region.notifyOnEntry = true
+        //region.notifyOnExit = true
+        return region
+    }
+    
+    func monitorLocation(landmarkPointAnnotation: LandmarkPointAnnotation) {
+        if !CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
+            showAlert(withTitle: "Error", message: "Geofencing is not supported on this device! :(")
+            return
+        }
+        
+        if CLLocationManager.authorizationStatus() != .authorizedAlways {
+            showAlert(withTitle: "Warning", message: "Please grant UTour permission to access your device's location")
+        }
+        
+        let region = self.region(withLandmark: landmarkPointAnnotation)
+        locManager.startMonitoring(for: region)
+    }
+    
+    func stopMonitoring(landmarkPointAnnotation: LandmarkPointAnnotation) {
+        for region in locManager.monitoredRegions {
+            guard let circularRegion = region as? CLCircularRegion, circularRegion.identifier == landmarkPointAnnotation.landmark?.name else { continue }
+            locManager.stopMonitoring(for: circularRegion)
         }
     }
     
@@ -130,10 +163,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 performSegue(withIdentifier: "LandmarkSelect", sender: view)
             }
         } else {
-            let ac = UIAlertController(title: "Hol' up!", message: "You haven't visited this place yet.", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
-            present(ac, animated: true)
+            showAlert(withTitle: "UnvisitedLocation", message: "You have not visited this location yet, keep searching!")
         }
     }
-
 }

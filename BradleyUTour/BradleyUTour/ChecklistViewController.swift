@@ -113,9 +113,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
             destination.landmark = landmarks[(tableView.indexPathForSelectedRow?.row)!]
         }
         if segue.identifier == "UnvisitedSelected" {
-            let ac = UIAlertController(title: "Unvisited Location", message: "You have not visited this location yet, keep searching!", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
-            present(ac, animated: true)
+            showAlert(withTitle: "UnvisitedLocation", message: "You have not visited this location yet, keep searching!")
         }
     }
     

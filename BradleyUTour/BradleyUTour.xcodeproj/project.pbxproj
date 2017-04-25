@@ -19,6 +19,7 @@
 		16BF56EE1E9E7BC800790E71 /* RewardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BF56ED1E9E7BC800790E71 /* RewardsViewController.swift */; };
 		16BF56F01E9E9FD700790E71 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BF56EF1E9E9FD700790E71 /* ChecklistViewController.swift */; };
 		16BF56F21E9EC4D000790E71 /* LandmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BF56F11E9EC4CF00790E71 /* LandmarkViewController.swift */; };
+		2057D9661EAFCDD200C3ECEF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2057D9651EAFCDD200C3ECEF /* Utilities.swift */; };
 		20A85B421E9D5A4300022C1A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A85B411E9D5A4300022C1A /* MapViewController.swift */; };
 		916961FC5B9764CAEDE6BBA4 /* Pods_BradleyUTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A9753BBD3F6F79647A145C /* Pods_BradleyUTour.framework */; };
 		EE5EA38A1E96C8D500B7CBFF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5EA3891E96C8D400B7CBFF /* SignInViewController.swift */; };
@@ -51,6 +52,7 @@
 		16BF56ED1E9E7BC800790E71 /* RewardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardsViewController.swift; sourceTree = "<group>"; };
 		16BF56EF1E9E9FD700790E71 /* ChecklistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecklistViewController.swift; sourceTree = "<group>"; };
 		16BF56F11E9EC4CF00790E71 /* LandmarkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkViewController.swift; sourceTree = "<group>"; };
+		2057D9651EAFCDD200C3ECEF /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		20A85B411E9D5A4300022C1A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AC821909BD1627FF807A4863 /* Pods-BradleyUTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BradleyUTour.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BradleyUTour/Pods-BradleyUTour.debug.xcconfig"; sourceTree = "<group>"; };
 		DBDAB9C6F2B7DD6D07ED8166 /* Pods-BradleyUTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BradleyUTour.release.xcconfig"; path = "Pods/Target Support Files/Pods-BradleyUTour/Pods-BradleyUTour.release.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				1678D9071E96BC3E007B9397 /* Assets.xcassets */,
 				1678D9091E96BC3E007B9397 /* LaunchScreen.storyboard */,
 				1678D90C1E96BC3E007B9397 /* Info.plist */,
+				2057D9651EAFCDD200C3ECEF /* Utilities.swift */,
 			);
 			path = BradleyUTour;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			files = (
 				16BF56EE1E9E7BC800790E71 /* RewardsViewController.swift in Sources */,
 				16A810F41EA01CE600D66088 /* LandmarkUnvisitedTableViewCell.swift in Sources */,
+				2057D9661EAFCDD200C3ECEF /* Utilities.swift in Sources */,
 				16BF56F21E9EC4D000790E71 /* LandmarkViewController.swift in Sources */,
 				16A810F21E9FFDF600D66088 /* LandmarkPopulator.swift in Sources */,
 				16BF56F01E9E9FD700790E71 /* ChecklistViewController.swift in Sources */,
