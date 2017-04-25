@@ -75,7 +75,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="7rl-gH-Lhu" kind="show" identifier="LandmarkSelect" id="EGt-2R-YtA"/>
+                                    <segue destination="7rl-gH-Lhu" kind="presentation" identifier="LandmarkSelect" id="EGt-2R-YtA"/>
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CNS-43-f8R">
@@ -864,6 +864,6 @@
         <image name="Rewards" width="28" height="31"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gbv-ty-K2N"/>
+        <segue reference="EGt-2R-YtA"/>
     </inferredMetricsTieBreakers>
 </document>
