@@ -16,7 +16,7 @@ struct LandmarkPopulator {
     private let bradleyHall = Landmark(value:
         ["Bradley Hall", false, "This is Bradley Hall", 40.698312, -89.617012, NSData()])
     private let gcc = Landmark(value:
-        ["Caterpillar Global Communications Center", false, "This is the GCC", 40.697943, -89.612109, NSData()])
+        ["Caterpillar GCC", false, "This is the GCC", 40.697943, -89.612109, NSData()])
     private let jobst = Landmark(value:
         ["Jobst Hall", false, "This is Jobst Hall", 40.699366, -89.616985, NSData()])
     private let westlake = Landmark(value:
