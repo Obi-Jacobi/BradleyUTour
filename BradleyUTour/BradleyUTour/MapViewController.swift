@@ -92,7 +92,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         // Set up the mapview
         mapView.delegate = self
-        mapView.mapType = MKMapType.hybrid
+        mapView.mapType = MKMapType.standard
         mapView.showsUserLocation = true
         
         addTourDestinations()
