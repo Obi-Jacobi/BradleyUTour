@@ -22,7 +22,7 @@
 		2057D9661EAFCDD200C3ECEF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2057D9651EAFCDD200C3ECEF /* Utilities.swift */; };
 		20A85B421E9D5A4300022C1A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A85B411E9D5A4300022C1A /* MapViewController.swift */; };
 		916961FC5B9764CAEDE6BBA4 /* Pods_BradleyUTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A9753BBD3F6F79647A145C /* Pods_BradleyUTour.framework */; };
-		EE5478121EB1E34400694D1B /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5478111EB1E34400694D1B /* TutorialViewController.swift */; };
+		EE5E72B61EB1F52600717F87 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5E72B51EB1F52600717F87 /* TutorialViewController.swift */; };
 		EE5EA38A1E96C8D500B7CBFF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5EA3891E96C8D400B7CBFF /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +57,7 @@
 		20A85B411E9D5A4300022C1A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AC821909BD1627FF807A4863 /* Pods-BradleyUTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BradleyUTour.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BradleyUTour/Pods-BradleyUTour.debug.xcconfig"; sourceTree = "<group>"; };
 		DBDAB9C6F2B7DD6D07ED8166 /* Pods-BradleyUTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BradleyUTour.release.xcconfig"; path = "Pods/Target Support Files/Pods-BradleyUTour/Pods-BradleyUTour.release.xcconfig"; sourceTree = "<group>"; };
-		EE5478111EB1E34400694D1B /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialViewController.swift; path = ../../../TutorialViewController.swift; sourceTree = "<group>"; };
+		EE5E72B51EB1F52600717F87 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		EE5EA3891E96C8D400B7CBFF /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		F9A9753BBD3F6F79647A145C /* Pods_BradleyUTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BradleyUTour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,7 +114,7 @@
 				16A810F51EA01D6100D66088 /* LandmarkVisitedTableViewCell.swift */,
 				16BF56ED1E9E7BC800790E71 /* RewardsViewController.swift */,
 				16BF56F11E9EC4CF00790E71 /* LandmarkViewController.swift */,
-				EE5478111EB1E34400694D1B /* TutorialViewController.swift */,
+				EE5E72B51EB1F52600717F87 /* TutorialViewController.swift */,
 				1678D9041E96BC3E007B9397 /* Main.storyboard */,
 				1678D9071E96BC3E007B9397 /* Assets.xcassets */,
 				1678D9091E96BC3E007B9397 /* LaunchScreen.storyboard */,
@@ -316,7 +316,7 @@
 				1678D9011E96BC3E007B9397 /* AppDelegate.swift in Sources */,
 				EE5EA38A1E96C8D500B7CBFF /* SignInViewController.swift in Sources */,
 				16A810F61EA01D6100D66088 /* LandmarkVisitedTableViewCell.swift in Sources */,
-				EE5478121EB1E34400694D1B /* TutorialViewController.swift in Sources */,
+				EE5E72B61EB1F52600717F87 /* TutorialViewController.swift in Sources */,
 				20A85B421E9D5A4300022C1A /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
