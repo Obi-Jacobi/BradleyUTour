@@ -13,7 +13,7 @@
         <!--Profile-->
         <scene sceneID="5hx-Y1-WXv">
             <objects>
-                <viewController id="gkW-dk-0ar" sceneMemberID="viewController">
+                <viewController id="gkW-dk-0ar" customClass="ProfileViewController" customModule="BradleyUTour" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bZF-3E-qK7"/>
                         <viewControllerLayoutGuide type="bottom" id="snp-kj-TeP"/>
@@ -39,7 +39,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="startButtonPressed:" destination="n7f-88-Ltr" eventType="touchUpInside" id="nLM-x0-ple"/>
+                                    <action selector="editPressed:" destination="gkW-dk-0ar" eventType="touchUpInside" id="D6E-NL-5SX"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mfq-Ep-Nsy">
@@ -110,6 +110,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="XIW-Vk-QtU"/>
+                    <connections>
+                        <outlet property="editButton" destination="f8V-Rg-BrX" id="01f-7c-EAl"/>
+                        <outlet property="emailField" destination="jpX-8F-rbP" id="nDM-KV-tIl"/>
+                        <outlet property="firstNameField" destination="oti-dz-gI5" id="pWE-nc-uos"/>
+                        <outlet property="lastNameField" destination="pIx-bN-wlF" id="gxX-WJ-FtD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MN8-f3-xVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -339,7 +345,7 @@
                 <navigationController storyboardIdentifier="Nav" automaticallyAdjustsScrollViewInsets="NO" id="7lw-Sp-eVz" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="UEN-53-CuY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="UEN-53-CuY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.64705882349999999" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

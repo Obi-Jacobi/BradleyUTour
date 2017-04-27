@@ -136,39 +136,11 @@ class SignInViewController: UIViewController {
     
     @IBAction func startButtonPressed(_ sender: UIButton) {
         let realm = try! Realm()
-        let users = realm.objects(User.self)
         
-        if users.count == 0 {
-            let user = User()
-            
-            guard let firstNameText = firstName.text, firstNameText != ""
-                else {
-                    let ac = UIAlertController(title: "First Name Not Valid", message: "That is not a valid first name, try again!", preferredStyle: .alert)
-                    ac.addAction(UIAlertAction(title: "OK", style: .default))
-                    present(ac, animated: true)
-                    return
-            }
-            user.firstName = firstNameText
-            guard let lastNameText = lastName.text, lastNameText != ""
-                else {
-                    let ac = UIAlertController(title: "Last Name Not Valid", message: "That is not a valid last name, try again!", preferredStyle: .alert)
-                    ac.addAction(UIAlertAction(title: "OK", style: .default))
-                    present(ac, animated: true)
-                    return
-            }
-            user.lastName = lastNameText
-            guard let emailText = email.text, emailText != ""
-                else {
-                    let ac = UIAlertController(title: "Email Not Valid", message: "That is not a valid email, try again!", preferredStyle: .alert)
-                    ac.addAction(UIAlertAction(title: "OK", style: .default))
-                    present(ac, animated: true)
-                    return
-            }
-            user.email = emailText
-            try! realm.write {
-                realm.add(user)
-                performSegue(withIdentifier: "GoToTut", sender: self)
-            }
+        let user = updateUser(firstName: firstName, lastName: lastName, email: email)
+        try! realm.write {
+            realm.add(user)
+            performSegue(withIdentifier: "GoToTut", sender: self)
         }
     }
     
