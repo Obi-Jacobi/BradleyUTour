@@ -1,0 +1,29 @@
+{
+  "stickers" : [
+    {
+      "filename" : "kaboomoji_happy.sticker"
+    },
+    {
+      "filename" : "kaboomoji_angry.sticker"
+    },
+    {
+      "filename" : "kaboomoji_shocked.sticker"
+    },
+    {
+      "filename" : "kaboomoji_love.sticker"
+    },
+    {
+      "filename" : "kaboomoji_winking.sticker"
+    },
+    {
+      "filename" : "kaboomoji_smiling.sticker"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "properties" : {
+    "grid-size" : "small"
+  }
+}
