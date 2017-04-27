@@ -17,66 +17,6 @@ class User: Object {
     dynamic var surveyResponse = ""
 }
 
-protocol KeyboardDismissable {
-    func keyboardWasShown(notification: NSNotification)
-    func keyboardWillBeHidden(notification: NSNotification)
-}
-
-extension UIViewController: UITextFieldDelegate, KeyboardDismissable {    
-    func keyboardWasShown(notification: NSNotification) {}
-    func keyboardWillBeHidden(notification: NSNotification) {}
-
-    func hideKeyboardWhenTapped() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
-    
-    func registerKeyboard() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-    }
-    
-    func deregisterKeyboard(){
-        //Removing notifies on keyboard appearing
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-    }
-    /*
-    func keyboardWasShown(notification: NSNotification){
-        //Need to calculate keyboard exact size due to Apple suggestions
-        scrollView.isScrollEnabled = true
-        var info = notification.userInfo!
-        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize!.height, 0.0)
-        
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
-        
-        var aRect : CGRect = self.view.frame
-        aRect.size.height -= keyboardSize!.height
-        if let activeField = activeField {
-            if (!aRect.contains(activeField.frame.origin)){
-                self.scrollView.scrollRectToVisible(activeField.frame, animated: true)
-            }
-        }
-    }
-    
-    func keyboardWillBeHidden(notification: NSNotification){
-        //Once keyboard disappears, restore original positions
-        var info = notification.userInfo!
-        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
-        let contentInsets : UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, -keyboardSize!.height, 0.0)
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
-        view.endEditing(true)
-        scrollView.isScrollEnabled = false
-    }*/
-}
 
 class SignInViewController: UIViewController {
     
@@ -138,10 +78,13 @@ class SignInViewController: UIViewController {
         let realm = try! Realm()
         
         let user = updateUser(firstName: firstName, lastName: lastName, email: email)
-        try! realm.write {
-            realm.add(user)
-            performSegue(withIdentifier: "GoToTut", sender: self)
+        if let user = user {
+            try! realm.write {
+                realm.add(user)
+                performSegue(withIdentifier: "GoToTut", sender: self)
+            }
         }
+        
     }
     
     override func viewDidLoad() {
