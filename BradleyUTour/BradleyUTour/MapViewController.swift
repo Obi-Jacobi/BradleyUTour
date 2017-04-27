@@ -120,15 +120,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
     
+    
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation:CLLocation = locations[0] as CLLocation
-
-        // Drop a pin at user's Current Location
-        let myAnnotation: MKPointAnnotation = MKPointAnnotation()
-        myAnnotation.coordinate = CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude);
-        myAnnotation.title = "You are here!"
-        
-        mapView.addAnnotation(myAnnotation)
+//        let userLocation:CLLocation = locations[0] as CLLocation
+//
+//        // Drop a pin at user's Current Location
+//        let myAnnotation: MKPointAnnotation = MKPointAnnotation()
+//        myAnnotation.coordinate = CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude);
+//        myAnnotation.title = "You are here!"
+//        
+//        mapView.addAnnotation(myAnnotation)
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
