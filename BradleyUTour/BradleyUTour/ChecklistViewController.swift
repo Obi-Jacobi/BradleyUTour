@@ -39,6 +39,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*
         let realm = try! Realm()
         
         let landmarks = realm.objects(Landmark.self)
@@ -46,7 +47,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         if landmarks.count == 0 {
             let populator = LandmarkPopulator()
             populator.populateRealm()
-        }
+        }*/
         
         // Do any additional setup after loading the view.
     }

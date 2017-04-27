@@ -44,6 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Now that we've told Realm how to handle the schema change, opening the file
         // will automatically perform the migration
+        
         let realm = try! Realm()
         let users = realm.objects(User.self)
         
@@ -56,6 +57,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = nav
             
             self.window?.makeKeyAndVisible()
+        }
+        
+        //Populate the database if it is empty
+        let landmarks = realm.objects(Landmark.self)
+        if landmarks.count == 0 {
+            let populator = LandmarkPopulator()
+            populator.populateRealm()
         }
         
         // Override point for customization after application launch.
