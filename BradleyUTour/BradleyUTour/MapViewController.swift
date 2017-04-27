@@ -94,6 +94,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView.delegate = self
         mapView.mapType = MKMapType.standard
         mapView.showsUserLocation = true
+        mapView.userLocation.title = "You're here"
+        mapView.isZoomEnabled = false
+        mapView.isScrollEnabled = false
         
         addTourDestinations()
         
@@ -120,8 +123,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
     
-    
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 //        let userLocation:CLLocation = locations[0] as CLLocation
 //
@@ -141,11 +142,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             dequeuedView.annotation = annotation
             view = dequeuedView
         } else {
-            // Insert the button to the landmark details page
             view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            view.canShowCallout = true
-            view.calloutOffset = CGPoint(x: -5, y: 5)
-            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure) as UIView
+            if(annotation.isEqual(mapView .userLocation)) {
+                view.canShowCallout = true
+                view.pinTintColor = UIColor.blue
+            } else {
+                // Insert the button to the landmark details page
+                view.canShowCallout = true
+                view.calloutOffset = CGPoint(x: -5, y: 5)
+                view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure) as UIView
+            }
         }
         
         // Change the color of the unvisited landmarks
@@ -168,4 +174,5 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             showAlert(withTitle: "UnvisitedLocation", message: "You have not visited this location yet, keep searching!")
         }
     }
+    
 }
