@@ -95,9 +95,14 @@ class SignInViewController: UIViewController {
         
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         
-        startButton.layer.cornerRadius = 15
-        startButton.layer.borderWidth = 1
-        startButton.layer.borderColor = UIColor.black.cgColor
+        addBorder(startButton, cornerRadius: 15)
+        addBorder(firstName)
+        addBorder(lastName)
+        addBorder(email)
+
+        addColorPlaceholderText(firstName)
+        addColorPlaceholderText(lastName)
+        addColorPlaceholderText(email)
         
         // Do any additional setup after loading the view.
     }

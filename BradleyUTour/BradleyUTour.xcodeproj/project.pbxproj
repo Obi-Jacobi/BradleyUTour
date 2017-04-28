@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		161B78401EB2AD2600376992 /* Tutorial7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161B783F1EB2AD2600376992 /* Tutorial7ViewController.swift */; };
 		1621E2521EB2757F0052AB4D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621E2511EB2757F0052AB4D /* ProfileViewController.swift */; };
 		1678D9011E96BC3E007B9397 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1678D9001E96BC3E007B9397 /* AppDelegate.swift */; };
 		1678D9031E96BC3E007B9397 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1678D9021E96BC3E007B9397 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		161B783F1EB2AD2600376992 /* Tutorial7ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial7ViewController.swift; sourceTree = "<group>"; };
 		1621E2511EB2757F0052AB4D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1678D8FD1E96BC3E007B9397 /* BradleyUTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BradleyUTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1678D9001E96BC3E007B9397 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				16BF56ED1E9E7BC800790E71 /* RewardsViewController.swift */,
 				16BF56F11E9EC4CF00790E71 /* LandmarkViewController.swift */,
 				EE5E72B51EB1F52600717F87 /* TutorialViewController.swift */,
+				161B783F1EB2AD2600376992 /* Tutorial7ViewController.swift */,
 				1621E2511EB2757F0052AB4D /* ProfileViewController.swift */,
 				1678D9041E96BC3E007B9397 /* Main.storyboard */,
 				1678D9071E96BC3E007B9397 /* Assets.xcassets */,
@@ -311,6 +314,7 @@
 			files = (
 				16BF56EE1E9E7BC800790E71 /* RewardsViewController.swift in Sources */,
 				16A810F41EA01CE600D66088 /* LandmarkUnvisitedTableViewCell.swift in Sources */,
+				161B78401EB2AD2600376992 /* Tutorial7ViewController.swift in Sources */,
 				2057D9661EAFCDD200C3ECEF /* Utilities.swift in Sources */,
 				16BF56F21E9EC4D000790E71 /* LandmarkViewController.swift in Sources */,
 				16A810F21E9FFDF600D66088 /* LandmarkPopulator.swift in Sources */,

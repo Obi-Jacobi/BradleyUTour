@@ -16,7 +16,7 @@ class RewardsViewController: UIViewController {
         super.viewDidLoad()
         
         for (index, reward) in rewards.enumerated() {
-            reward.layer.cornerRadius = 50
+            addBorder(reward, cornerRadius: 50)
             
             let subviews = reward.subviews as! [UIImageView]
             let imageView = subviews.first

@@ -28,9 +28,7 @@ class LandmarkViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        doneButton.layer.cornerRadius = 15
-        doneButton.layer.borderWidth = 1
-        doneButton.layer.borderColor = UIColor.darkGray.cgColor
+        addBorder(doneButton, cornerRadius: 15)
         
         guard let landmark = landmark
             else {

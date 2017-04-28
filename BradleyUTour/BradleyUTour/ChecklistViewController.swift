@@ -39,6 +39,8 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addBorder(tableView)
+        
         /*
         let realm = try! Realm()
         
@@ -65,16 +67,18 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
             }
         }
         visitedLabel.text = "\(visitedCount)/\(landmarks.count)"
+        /*
         let progressPercent = Double(visitedCount)/Double(landmarks.count)
         progressBar.progress = Float(progressPercent)
         let progressPercent100 = progressPercent*100
         progressLabel.text = "\(progressPercent100)%"
-        
+        */
         tableView.reloadData()
-        updateProgress()
-        updateProgress()
+        //updateProgress()
+        //updateProgress()
     }
     
+    /*
     func updateProgress() {
         let barRect = progressBar.frame
         let labelRect = progressLabel.frame
@@ -85,11 +89,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
         newLabelRect.origin.x = CGFloat(progressWidth/2) - (labelRect.width / 2)
         
         progressLabel.frame = newLabelRect
-    }
-    
-    override func viewDidLayoutSubviews() {
-        
-    }
+    }*/
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -108,7 +108,7 @@ class ChecklistViewController: UIViewController, UITableViewDelegate, UITableVie
             let destination = segue.destination as! LandmarkViewController
             
             let realm = try! Realm()
-            let landmarks = realm.objects(Landmark.self)
+            let landmarks = realm.objects(Landmark.self).sorted(byKeyPath: "visited", ascending: false)
             
             destination.landmark = landmarks[(tableView.indexPathForSelectedRow?.row)!]
         }

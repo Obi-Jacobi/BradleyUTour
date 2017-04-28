@@ -16,7 +16,7 @@ class TutorialViewController: UIPageViewController {
                 self.newTutorialPageViewController(pageNumber: 4),
                 self.newTutorialPageViewController(pageNumber: 5),
                 self.newTutorialPageViewController(pageNumber: 6),
-                self.newTutorialPageViewController(pageNumber: 7),]
+                self.newTutorial7PageViewController(pageNumber: 7),]
     }()
     
     override func viewDidLoad() {
@@ -38,6 +38,11 @@ class TutorialViewController: UIPageViewController {
     private func newTutorialPageViewController(pageNumber: Int) -> UIViewController {
         return UIStoryboard(name: "Main", bundle: nil) .
             instantiateViewController(withIdentifier: "TutorialPage\(pageNumber)")
+    }
+    
+    private func newTutorial7PageViewController(pageNumber: Int) -> Tutorial7ViewController {
+        return UIStoryboard(name: "Main", bundle: nil) .
+            instantiateViewController(withIdentifier: "TutorialPage\(pageNumber)") as! Tutorial7ViewController
     }
     
     /*

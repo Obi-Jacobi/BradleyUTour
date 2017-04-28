@@ -44,6 +44,18 @@ extension UIViewController {
         return user
     }
     
+    func addBorder(_ view:UIView, cornerRadius:CGFloat = 3) {
+        view.layer.cornerRadius = cornerRadius
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor(colorLiteralRed: 165.0/255.0, green: 0, blue: 0, alpha: 1).cgColor
+    }
+    
+    func addColorPlaceholderText(_ field:UITextField) {
+        if let placeholder = field.placeholder {
+            field.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSForegroundColorAttributeName:UIColor(colorLiteralRed: 165.0/255.0, green: 0, blue: 0, alpha: 1)])
+        }
+    }
+    
 }
 
 

@@ -22,6 +22,15 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addBorder(editButton, cornerRadius: 15)
+        addBorder(firstNameField)
+        addBorder(lastNameField)
+        addBorder(emailField)
+        
+        addColorPlaceholderText(firstNameField)
+        addColorPlaceholderText(lastNameField)
+        addColorPlaceholderText(emailField)
+        
         registerKeyboard()
         hideKeyboardWhenTapped()
         
