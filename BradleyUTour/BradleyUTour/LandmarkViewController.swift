@@ -44,21 +44,23 @@ class LandmarkViewController: UIViewController {
             imageView.image = UIImage(named: "Kaboom")
             
             //descriptionText.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dapibus pharetra metus, id euismod odio pretium in. Quisque risus augue, hendrerit quis est eu, gravida semper justo. Aenean varius nec mauris iaculis posuere. Vestibulum interdum sapien vitae rutrum pharetra. Sed eget ex magna. Aenean tortor ex, tempus a elit nec, lobortis pretium lorem. Mauris viverra a leo sed gravida. In tempus lectus in iaculis commodo. Maecenas vehicula dapibus ipsum. Donec porta turpis nec tellus hendrerit efficitur. Fusce bibendum accumsan velit eu vestibulum. Ut congue metus aliquet diam gravida, rutrum feugiat risus semper. Phasellus sit amet leo eu massa ultricies scelerisque. Duis efficitur elementum accumsan. Praesent mattis nunc ut risus posuere, dictum sodales velit venenatis. Nunc quis ultrices ipsum, efficitur finibus *purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut dignissim vestibulum odio nec sollicitudin. Pellentesque ac condimentum dui. Vestibulum semper augue sit amet pretium eleifend. Suspendisse venenatis ac ante nec cursus. Vestibulum ante ipsum" /*primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum sem enim, aliquet sed placerat vitae, varius sed nunc. Aliquam laoreet, tortor eu rutrum aliquet, ipsum magna feugiat arcu, vehicula accumsan sapien tortor vitae sapien. Nam commodo dapibus nibh eu viverra.Ut sit amet ligula id lacus tempor accumsan. Nullam in ornare augue, quis iaculis nisi. Sed libero justo, consequat sit amet sagittis eget, convallis id lacus. Curabitur magna diam, pretium et metus sed, dapibus dignissim diam. Proin elementum massa convallis hendrerit tincidunt. Sed semper purus a felis facilisis lacinia. Maecenas efficitur sodales fermentum. Praesent lacinia luctus faucibus."*/
-            descriptionText.sizeToFit()
             
-            let constraints = scrollView.constraints
-            for constraint in constraints {
-                if constraint.firstAttribute == NSLayoutAttribute.centerY {
-                    if (descriptionText.frame.origin.y + descriptionText.frame.height) >= doneButton.frame.origin.y {
-                        
-                        scrollView.removeConstraint(constraint)
-                        
-                        let difference = (descriptionText.frame.origin.y + descriptionText.frame.height) - doneButton.frame.origin.y
-                        
-                        let newHeight = NSLayoutConstraint(item: mainView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.height, multiplier: 1, constant: mainView.frame.height + difference + 15)
-                        
-                        mainView.addConstraint(newHeight)
-                    }
+        }
+        
+        descriptionText.sizeToFit()
+        
+        let constraints = scrollView.constraints
+        for constraint in constraints {
+            if constraint.firstAttribute == NSLayoutAttribute.centerY {
+                if (descriptionText.frame.origin.y + descriptionText.frame.height) >= doneButton.frame.origin.y {
+                    
+                    scrollView.removeConstraint(constraint)
+                    
+                    let difference = (descriptionText.frame.origin.y + descriptionText.frame.height) - doneButton.frame.origin.y
+                    
+                    let newHeight = NSLayoutConstraint(item: mainView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.height, multiplier: 1, constant: mainView.frame.height + difference + 15)
+                    
+                    mainView.addConstraint(newHeight)
                 }
             }
         }

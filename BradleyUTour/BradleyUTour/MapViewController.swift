@@ -95,8 +95,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         mapView.mapType = MKMapType.standard
         mapView.showsUserLocation = true
         mapView.userLocation.title = "You're here"
-        mapView.isZoomEnabled = false
-        mapView.isScrollEnabled = false
+        mapView.isZoomEnabled = true
+        mapView.isScrollEnabled = true
         
         addTourDestinations()
         
