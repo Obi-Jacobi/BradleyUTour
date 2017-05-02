@@ -10,13 +10,14 @@ import UIKit
 import CoreLocation
 import MapKit
 import RealmSwift
+import UserNotifications
 
 class LandmarkPointAnnotation : MKPointAnnotation {
     var landmark: Landmark?
     let radius = 25
 }
 
-class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UNUserNotificationCenterDelegate {
     var locManager: CLLocationManager!
     var tourDestinations: [CLLocation] = []
     @IBOutlet weak var mapView: MKMapView!
@@ -42,17 +43,23 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             annotation.landmark = landmark
             mapView.addAnnotation(annotation)
+            //func addRadiusOverlay(forGeotification geotification: Geotification) {
+            mapView.add(MKCircle(center: annotation.coordinate, radius:CLLocationDistance(annotation.radius)))
+            //}
+            
+            monitorLocation(landmarkPointAnnotation: annotation)
         }
     }
     
     func region(withLandmark landmarkPointAnnotation: LandmarkPointAnnotation) -> CLCircularRegion {
+        //print("regionWithLandmark")
         let landmark = landmarkPointAnnotation.landmark
         let coordinate = CLLocationCoordinate2D(latitude: (landmark?.latitude)!, longitude: (landmark?.longitude)!)
         
         let region = CLCircularRegion(center: coordinate, radius: CLLocationDistance(landmarkPointAnnotation.radius), identifier: (landmark?.name)!)
         
         region.notifyOnEntry = true
-        //region.notifyOnExit = true
+        region.notifyOnExit = true
         return region
     }
     
@@ -67,6 +74,31 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         
         let region = self.region(withLandmark: landmarkPointAnnotation)
+        print(region.notifyOnEntry)
+        
+        let trigger = UNLocationNotificationTrigger(region: region, repeats: false)
+        
+        // Create Notification Content
+        let notificationContent = UNMutableNotificationContent()
+        
+        // Configure Notification Content
+        notificationContent.title = "Bradley UTour"
+        notificationContent.subtitle = "You have vistied, \(landmarkPointAnnotation.landmark?.name)"
+        notificationContent.body = "Good job! Keep it up!"
+        
+        
+        
+        // Create Notification Request
+        let notificationRequest = UNNotificationRequest(identifier: "bradley_utour_local_notification", content: notificationContent, trigger: trigger)
+        
+        // Add Request to User Notification Center
+        UNUserNotificationCenter.current().add(notificationRequest) { (error) in
+            if let error = error {
+                print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
+            }
+        }
+        
+        
         locManager.startMonitoring(for: region)
     }
     
@@ -101,10 +133,40 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         addTourDestinations()
         
         centerMapOnLocation(location: CLLocation(latitude: 40.698143, longitude: -89.616412))
+        
+        UNUserNotificationCenter.current().delegate = self
+        UNUserNotificationCenter.current().getNotificationSettings(completionHandler: { (notificationSettings) in
+            switch notificationSettings.authorizationStatus {
+            case .notDetermined:
+                self.requestAuthorization(completionHandler: { (success) in
+                    guard success
+                        else {
+                            return
+                    }
+                    //self.scheduleLocalNotification()
+                })
+            case .authorized:
+                print("authorized")
+                
+            case .denied:
+                print("Application Not Allowed to Display Notifications")
+            }
+        })
+    }
+    
+    private func requestAuthorization(completionHandler: @escaping (_ success: Bool) -> ()) {
+        // Request Authorization
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (success, error) in
+            if let error = error {
+                print("Request Authorization Failed (\(error), \(error.localizedDescription))")
+            }
+            
+            completionHandler(success)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        self.mapView.reloadInputViews()
     }
     
     override func didReceiveMemoryWarning() {
@@ -123,6 +185,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
     
+    /*
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 //        let userLocation:CLLocation = locations[0] as CLLocation
 //
@@ -132,6 +195,42 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 //        myAnnotation.title = "You are here!"
 //        
 //        mapView.addAnnotation(myAnnotation)
+    }*/
+    
+    
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        print("Did Enter Region: \(region.identifier)")
+        //print(region)
+        let realm = try! Realm()
+        let landmarks = realm.objects(Landmark.self)
+        
+        for landmark in landmarks {
+            if landmark.name == region.identifier {
+                //landmark.visited = true
+                try! realm.write {
+                    landmark.visited = true
+                }
+                //mapView.
+                //self.locManager.refres
+                //
+            }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didVisit visit: CLVisit) {
+        print("Did Visit \(visit)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        print("Did exit Region: \(region.identifier)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Location Manager failed with the following error: \(error)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
+        print("Monitoring failed for region with identifier: \(region!.identifier)")
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -162,6 +261,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         return view
     }
     
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay is MKCircle {
+            let circleRenderer = MKCircleRenderer(overlay: overlay)
+            circleRenderer.lineWidth = 1.0
+            circleRenderer.strokeColor = .purple
+            circleRenderer.fillColor = UIColor.purple.withAlphaComponent(0.4)
+            return circleRenderer
+        }
+        return MKOverlayRenderer(overlay: overlay)
+    }
+    
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let annotation = view.annotation as! LandmarkPointAnnotation
         
@@ -173,6 +283,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         } else {
             showAlert(withTitle: "UnvisitedLocation", message: "You have not visited this location yet, keep searching!")
         }
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert])
+        print("notification time \(notification)")
     }
     
 }

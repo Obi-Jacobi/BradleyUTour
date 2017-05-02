@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		161B78401EB2AD2600376992 /* Tutorial7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161B783F1EB2AD2600376992 /* Tutorial7ViewController.swift */; };
 		1621E2521EB2757F0052AB4D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621E2511EB2757F0052AB4D /* ProfileViewController.swift */; };
+		1668C5F41EB7F01400437DBE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1668C5F31EB7F01400437DBE /* SettingsViewController.swift */; };
+		1668C5F61EB8073300437DBE /* LocationFile.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 1668C5F51EB8073300437DBE /* LocationFile.gpx */; };
 		1678D9011E96BC3E007B9397 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1678D9001E96BC3E007B9397 /* AppDelegate.swift */; };
 		1678D9031E96BC3E007B9397 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1678D9021E96BC3E007B9397 /* ViewController.swift */; };
 		1678D9061E96BC3E007B9397 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1678D9041E96BC3E007B9397 /* Main.storyboard */; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		161B783F1EB2AD2600376992 /* Tutorial7ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial7ViewController.swift; sourceTree = "<group>"; };
 		1621E2511EB2757F0052AB4D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		1668C5F31EB7F01400437DBE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1668C5F51EB8073300437DBE /* LocationFile.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = LocationFile.gpx; sourceTree = "<group>"; };
 		1678D8FD1E96BC3E007B9397 /* BradleyUTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BradleyUTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1678D9001E96BC3E007B9397 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1678D9021E96BC3E007B9397 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -121,10 +125,12 @@
 				EE5E72B51EB1F52600717F87 /* TutorialViewController.swift */,
 				161B783F1EB2AD2600376992 /* Tutorial7ViewController.swift */,
 				1621E2511EB2757F0052AB4D /* ProfileViewController.swift */,
+				1668C5F31EB7F01400437DBE /* SettingsViewController.swift */,
 				1678D9041E96BC3E007B9397 /* Main.storyboard */,
 				1678D9071E96BC3E007B9397 /* Assets.xcassets */,
 				1678D9091E96BC3E007B9397 /* LaunchScreen.storyboard */,
 				1678D90C1E96BC3E007B9397 /* Info.plist */,
+				1668C5F51EB8073300437DBE /* LocationFile.gpx */,
 				2057D9651EAFCDD200C3ECEF /* Utilities.swift */,
 			);
 			path = BradleyUTour;
@@ -246,6 +252,7 @@
 			files = (
 				1678D90B1E96BC3E007B9397 /* LaunchScreen.storyboard in Resources */,
 				1678D9081E96BC3E007B9397 /* Assets.xcassets in Resources */,
+				1668C5F61EB8073300437DBE /* LocationFile.gpx in Resources */,
 				1678D9061E96BC3E007B9397 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +327,7 @@
 				16A810F21E9FFDF600D66088 /* LandmarkPopulator.swift in Sources */,
 				16BF56F01E9E9FD700790E71 /* ChecklistViewController.swift in Sources */,
 				1678D9031E96BC3E007B9397 /* ViewController.swift in Sources */,
+				1668C5F41EB7F01400437DBE /* SettingsViewController.swift in Sources */,
 				1678D9011E96BC3E007B9397 /* AppDelegate.swift in Sources */,
 				EE5EA38A1E96C8D500B7CBFF /* SignInViewController.swift in Sources */,
 				16A810F61EA01D6100D66088 /* LandmarkVisitedTableViewCell.swift in Sources */,

@@ -146,7 +146,7 @@
         <!--Settings-->
         <scene sceneID="k3c-k8-it7">
             <objects>
-                <viewController id="aLt-a3-voh" sceneMemberID="viewController">
+                <viewController id="aLt-a3-voh" customClass="SettingsViewController" customModule="BradleyUTour" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aZN-He-wpM"/>
                         <viewControllerLayoutGuide type="bottom" id="yfX-Z4-eGs"/>
@@ -161,10 +161,19 @@
                                 <color key="textColor" red="0.64705882349999999" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fs-qz-M8m">
+                                <rect key="frame" x="164" y="474" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="pressed:" destination="aLt-a3-voh" eventType="touchUpInside" id="i1f-rR-xxb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dLu-eu-r03" firstAttribute="centerY" secondItem="TYw-ge-JTF" secondAttribute="centerY" id="R2F-ck-aWo"/>
+                            <constraint firstItem="8fs-qz-M8m" firstAttribute="centerX" secondItem="TYw-ge-JTF" secondAttribute="centerX" id="bl7-Di-zOJ"/>
+                            <constraint firstItem="yfX-Z4-eGs" firstAttribute="top" secondItem="8fs-qz-M8m" secondAttribute="bottom" constant="50" id="kmm-ng-sBv"/>
                             <constraint firstItem="dLu-eu-r03" firstAttribute="centerX" secondItem="TYw-ge-JTF" secondAttribute="centerX" id="ktY-AW-5JL"/>
                         </constraints>
                     </view>
@@ -410,7 +419,7 @@
                                         <rect key="frame" x="0.0" y="28" width="373" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jOO-Rq-Q3n" id="0hN-0s-MZP">
-                                            <rect key="frame" x="0.0" y="0.0" width="373" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="373" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebe-v1-7lF">
@@ -434,7 +443,7 @@
                                         <rect key="frame" x="0.0" y="72" width="373" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nYq-Fo-3Xr" id="Pwn-J4-DaS">
-                                            <rect key="frame" x="0.0" y="0.0" width="373" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="373" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visited Landmark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyF-vZ-lkx">
