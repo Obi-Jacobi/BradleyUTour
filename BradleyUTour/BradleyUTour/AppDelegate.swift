@@ -15,16 +15,8 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-    let locationManager = CLLocationManager()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        /*
-        // Location Manager setup
-        locationManager.delegate = self as? CLLocationManagerDelegate
-        locationManager.requestAlwaysAuthorization()
-        */
         let config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used
             // version (if you've never set a schema version before, the version is 0).
@@ -93,73 +85,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-    /*
-    func handleLandmarkEvent(forRegion region: CLRegion!) {
-        // Show an alert if application is active
-        if UIApplication.shared.applicationState == .active {
-            guard let message = note(fromRegionIdentifier: region.identifier) else { return }
-            window?.rootViewController?.showAlert(withTitle: nil, message: message)
-        } else {
-            // Otherwise present a local notification
-            let notification = UILocalNotification()
-            notification.alertBody = note(fromRegionIdentifier: region.identifier)
-            notification.soundName = "Default"
-            UIApplication.shared.presentLocalNotificationNow(notification)
-        }
-    }
-    
-    func note(fromRegionIdentifier identifier: String) -> String? {
-        // get the name of the landmark we just walked up to
-        return "A landmark"
-    }*/
 }
-
-
-extension AppDelegate: CLLocationManagerDelegate {
-    
-    /*
-    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        if region is CLCircularRegion {
-            let realm = try! Realm()
-            let landmarks = realm.objects(Landmark.self)
-            
-            for landmark in landmarks {
-                
-            }
-            
-            /*
-            //handleLandmarkEvent(forRegion: region)
-            print("Enter: \(region.identifier)")
-            let notificationContent = UNMutableNotificationContent()
-            
-            // Configure Notification Content
-            notificationContent.title = "Bradley UTour"
-            notificationContent.subtitle = "You have vistied, \(region.identifier)"
-            notificationContent.body = "Good job! Keep it up!"
-            
-            // Add Trigger
-            let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.5, repeats: false)
-            
-            // Create Notification Request
-            let notificationRequest = UNNotificationRequest(identifier: "bradley_utour_local_notification", content: notificationContent, trigger: notificationTrigger)
-            
-            // Add Request to User Notification Center
-            UNUserNotificationCenter.current().add(notificationRequest) { (error) in
-                print("it was added")
-                if let error = error {
-                    print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
-                }
-            }
-            */
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        if region is CLCircularRegion {
-            //handleLandmarkEvent(forRegion: region)
-            print("Exit: \(region.identifier)")
-        }
-    }*/
-}
-

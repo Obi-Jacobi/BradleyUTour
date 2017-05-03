@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import RealmSwift
 
 class SettingsViewController: UIViewController, UNUserNotificationCenterDelegate {
 
@@ -26,6 +27,15 @@ class SettingsViewController: UIViewController, UNUserNotificationCenterDelegate
     
     @IBAction func pressed(_ sender: UIButton) {
         print("pressed")
+        let realm = try! Realm()
+        let landmarks = realm.objects(Landmark.self)
+        
+        for landmark in landmarks {
+            try! realm.write {
+                landmark.visited = false
+            }
+        }
+        /*
         UNUserNotificationCenter.current().getNotificationSettings(completionHandler: { (notificationSettings) in
             switch notificationSettings.authorizationStatus {
             case .notDetermined:
@@ -43,7 +53,7 @@ class SettingsViewController: UIViewController, UNUserNotificationCenterDelegate
             case .denied:
                 print("Application Not Allowed to Display Notifications")
             }
-        })
+        })*/
     }
     
     private func requestAuthorization(completionHandler: @escaping (_ success: Bool) -> ()) {
