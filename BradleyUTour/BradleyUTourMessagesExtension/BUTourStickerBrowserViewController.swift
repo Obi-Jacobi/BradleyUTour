@@ -17,6 +17,8 @@ class BUTourStickerBrowserViewController: MSStickerBrowserViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //let newView = MSStickerBrowserView(
+        
         // Do any additional setup after loading the view.
     }
 

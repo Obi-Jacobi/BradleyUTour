@@ -17,6 +17,8 @@ class SettingsViewController: UIViewController, UNUserNotificationCenterDelegate
 
         UNUserNotificationCenter.current().delegate = self
         
+        addBorder(finishButton, cornerRadius: 15)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -24,6 +26,8 @@ class SettingsViewController: UIViewController, UNUserNotificationCenterDelegate
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBOutlet var finishButton:UIButton!
     
     @IBAction func finishTourPressed(_ sender: Any) {
         let realm = try! Realm()

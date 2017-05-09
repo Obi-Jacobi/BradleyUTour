@@ -155,12 +155,6 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLu-eu-r03">
-                                <rect key="frame" x="116.5" y="256" width="141.5" height="43"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="36"/>
-                                <color key="textColor" red="0.64705882349999999" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fs-qz-M8m">
                                 <rect key="frame" x="85" y="454" width="204" height="50"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -179,14 +173,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dLu-eu-r03" firstAttribute="centerY" secondItem="TYw-ge-JTF" secondAttribute="centerY" id="R2F-ck-aWo"/>
                             <constraint firstItem="8fs-qz-M8m" firstAttribute="centerX" secondItem="TYw-ge-JTF" secondAttribute="centerX" id="bl7-Di-zOJ"/>
                             <constraint firstItem="yfX-Z4-eGs" firstAttribute="top" secondItem="8fs-qz-M8m" secondAttribute="bottom" constant="50" id="kmm-ng-sBv"/>
-                            <constraint firstItem="dLu-eu-r03" firstAttribute="centerX" secondItem="TYw-ge-JTF" secondAttribute="centerX" id="ktY-AW-5JL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="2t6-Vp-dl3"/>
                     <connections>
+                        <outlet property="finishButton" destination="8fs-qz-M8m" id="0Br-YB-zer"/>
                         <segue destination="FF3-AP-1pV" kind="show" identifier="GoToSurvey" id="7EG-xI-uhc"/>
                     </connections>
                 </viewController>
@@ -395,6 +388,7 @@
                         <outlet property="funStepper" destination="PFJ-Wa-R0g" id="b3E-C5-RVt"/>
                         <outlet property="performLabel" destination="PZ4-5p-XAy" id="cUb-jG-p91"/>
                         <outlet property="performStepper" destination="3Ht-Us-BG9" id="XJO-Ep-hgU"/>
+                        <outlet property="submitButton" destination="hu8-pj-kKm" id="pgu-C9-a8d"/>
                         <outlet property="useLabel" destination="hed-BX-Akb" id="lX2-Wx-g0f"/>
                         <outlet property="useStepper" destination="hMw-Yz-Wdy" id="3YQ-fM-5Wh"/>
                         <segue destination="hgw-V9-1rG" kind="unwind" identifier="unwindToSettings" unwindAction="unwindWithSegue:" id="zOk-Gz-uyr"/>

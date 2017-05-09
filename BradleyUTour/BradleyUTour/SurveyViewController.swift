@@ -23,9 +23,13 @@ class SurveyViewController: UIViewController {
     @IBOutlet weak var performLabel: UILabel!
     @IBOutlet weak var funLabel: UILabel!
     
+    @IBOutlet var submitButton:UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        addBorder(submitButton, cornerRadius: 15)
+        
         // Do any additional setup after loading the view.
     }
 
