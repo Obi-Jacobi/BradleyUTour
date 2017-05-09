@@ -25,6 +25,18 @@
 		1678D9161E96BC3E007B9397 /* BradleyUTourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1678D9151E96BC3E007B9397 /* BradleyUTourTests.swift */; };
 		16A29BD11EC16CDA0078C265 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A29BD01EC16CDA0078C265 /* Landmark.swift */; };
 		16A29BD21EC16CDA0078C265 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A29BD01EC16CDA0078C265 /* Landmark.swift */; };
+		16A29BDF1EC1736E0078C265 /* kaboom_angry.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A29BD91EC1736E0078C265 /* kaboom_angry.png */; };
+		16A29BE01EC1736E0078C265 /* kaboom_angry.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A29BD91EC1736E0078C265 /* kaboom_angry.png */; };
+		16A29BE11EC1736E0078C265 /* kaboom_happy.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A29BDA1EC1736E0078C265 /* kaboom_happy.png */; };
+		16A29BE21EC1736E0078C265 /* kaboom_happy.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A29BDA1EC1736E0078C265 /* kaboom_happy.png */; };
+		16A29BE31EC1736E0078C265 /* kaboom_love.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A29BDB1EC1736E0078C265 /* kaboom_love.png */; };
+		16A29BE41EC1736E0078C265 /* kaboom_love.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A29BDB1EC1736E0078C265 /* kaboom_love.png */; };
+		16A29BE51EC1736E0078C265 /* kaboom_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A29BDC1EC1736E0078C265 /* kaboom_normal.png */; };
+		16A29BE61EC1736E0078C265 /* kaboom_normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A29BDC1EC1736E0078C265 /* kaboom_normal.png */; };
+		16A29BE71EC1736E0078C265 /* kaboom_shocked.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A29BDD1EC1736E0078C265 /* kaboom_shocked.png */; };
+		16A29BE81EC1736E0078C265 /* kaboom_shocked.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A29BDD1EC1736E0078C265 /* kaboom_shocked.png */; };
+		16A29BE91EC1736E0078C265 /* kaboom_winking.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A29BDE1EC1736E0078C265 /* kaboom_winking.png */; };
+		16A29BEA1EC1736E0078C265 /* kaboom_winking.png in Resources */ = {isa = PBXBuildFile; fileRef = 16A29BDE1EC1736E0078C265 /* kaboom_winking.png */; };
 		16A810F21E9FFDF600D66088 /* LandmarkPopulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A810F11E9FFDF600D66088 /* LandmarkPopulator.swift */; };
 		16A810F41EA01CE600D66088 /* LandmarkUnvisitedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A810F31EA01CE600D66088 /* LandmarkUnvisitedTableViewCell.swift */; };
 		16A810F61EA01D6100D66088 /* LandmarkVisitedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A810F51EA01D6100D66088 /* LandmarkVisitedTableViewCell.swift */; };
@@ -94,6 +106,12 @@
 		1678D9151E96BC3E007B9397 /* BradleyUTourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BradleyUTourTests.swift; sourceTree = "<group>"; };
 		1678D9171E96BC3E007B9397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16A29BD01EC16CDA0078C265 /* Landmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Landmark.swift; path = BradleyUTour/Landmark.swift; sourceTree = SOURCE_ROOT; };
+		16A29BD91EC1736E0078C265 /* kaboom_angry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaboom_angry.png; sourceTree = "<group>"; };
+		16A29BDA1EC1736E0078C265 /* kaboom_happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaboom_happy.png; sourceTree = "<group>"; };
+		16A29BDB1EC1736E0078C265 /* kaboom_love.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaboom_love.png; sourceTree = "<group>"; };
+		16A29BDC1EC1736E0078C265 /* kaboom_normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaboom_normal.png; sourceTree = "<group>"; };
+		16A29BDD1EC1736E0078C265 /* kaboom_shocked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaboom_shocked.png; sourceTree = "<group>"; };
+		16A29BDE1EC1736E0078C265 /* kaboom_winking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kaboom_winking.png; sourceTree = "<group>"; };
 		16A810F11E9FFDF600D66088 /* LandmarkPopulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkPopulator.swift; sourceTree = "<group>"; };
 		16A810F31EA01CE600D66088 /* LandmarkUnvisitedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkUnvisitedTableViewCell.swift; sourceTree = "<group>"; };
 		16A810F51EA01D6100D66088 /* LandmarkVisitedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkVisitedTableViewCell.swift; sourceTree = "<group>"; };
@@ -143,6 +161,7 @@
 		162E47381EC164870034CBF4 /* BradleyUTourMessagesExtension */ = {
 			isa = PBXGroup;
 			children = (
+				164288B41EC1756100331117 /* Stickers */,
 				162E474C1EC1680B0034CBF4 /* BradleyUTourMessagesExtension.entitlements */,
 				162E47391EC164870034CBF4 /* MessagesViewController.swift */,
 				162E47481EC164AF0034CBF4 /* BUTourStickerBrowserViewController.swift */,
@@ -151,6 +170,19 @@
 				162E47401EC164870034CBF4 /* Info.plist */,
 			);
 			path = BradleyUTourMessagesExtension;
+			sourceTree = "<group>";
+		};
+		164288B41EC1756100331117 /* Stickers */ = {
+			isa = PBXGroup;
+			children = (
+				16A29BD91EC1736E0078C265 /* kaboom_angry.png */,
+				16A29BDA1EC1736E0078C265 /* kaboom_happy.png */,
+				16A29BDB1EC1736E0078C265 /* kaboom_love.png */,
+				16A29BDC1EC1736E0078C265 /* kaboom_normal.png */,
+				16A29BDD1EC1736E0078C265 /* kaboom_shocked.png */,
+				16A29BDE1EC1736E0078C265 /* kaboom_winking.png */,
+			);
+			name = Stickers;
 			sourceTree = "<group>";
 		};
 		1678D8F41E96BC3E007B9397 = {
@@ -399,7 +431,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				162E473F1EC164870034CBF4 /* Assets.xcassets in Resources */,
+				16A29BE41EC1736E0078C265 /* kaboom_love.png in Resources */,
+				16A29BE81EC1736E0078C265 /* kaboom_shocked.png in Resources */,
+				16A29BE21EC1736E0078C265 /* kaboom_happy.png in Resources */,
+				16A29BEA1EC1736E0078C265 /* kaboom_winking.png in Resources */,
 				162E473D1EC164870034CBF4 /* MainInterface.storyboard in Resources */,
+				16A29BE01EC1736E0078C265 /* kaboom_angry.png in Resources */,
+				16A29BE61EC1736E0078C265 /* kaboom_normal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,8 +446,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1678D90B1E96BC3E007B9397 /* LaunchScreen.storyboard in Resources */,
+				16A29BE11EC1736E0078C265 /* kaboom_happy.png in Resources */,
+				16A29BE31EC1736E0078C265 /* kaboom_love.png in Resources */,
+				16A29BE71EC1736E0078C265 /* kaboom_shocked.png in Resources */,
 				1678D9081E96BC3E007B9397 /* Assets.xcassets in Resources */,
+				16A29BDF1EC1736E0078C265 /* kaboom_angry.png in Resources */,
+				16A29BE51EC1736E0078C265 /* kaboom_normal.png in Resources */,
 				166B72841EB931AF00043A8E /* Location.gpx in Resources */,
+				16A29BE91EC1736E0078C265 /* kaboom_winking.png in Resources */,
 				1678D9061E96BC3E007B9397 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
