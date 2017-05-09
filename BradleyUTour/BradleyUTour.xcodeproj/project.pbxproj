@@ -19,7 +19,6 @@
 		1668C5F41EB7F01400437DBE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1668C5F31EB7F01400437DBE /* SettingsViewController.swift */; };
 		166B72841EB931AF00043A8E /* Location.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 166B72831EB931AF00043A8E /* Location.gpx */; };
 		1678D9011E96BC3E007B9397 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1678D9001E96BC3E007B9397 /* AppDelegate.swift */; };
-		1678D9031E96BC3E007B9397 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1678D9021E96BC3E007B9397 /* ViewController.swift */; };
 		1678D9061E96BC3E007B9397 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1678D9041E96BC3E007B9397 /* Main.storyboard */; };
 		1678D9081E96BC3E007B9397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1678D9071E96BC3E007B9397 /* Assets.xcassets */; };
 		1678D90B1E96BC3E007B9397 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1678D9091E96BC3E007B9397 /* LaunchScreen.storyboard */; };
@@ -87,7 +86,6 @@
 		166B72831EB931AF00043A8E /* Location.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 		1678D8FD1E96BC3E007B9397 /* BradleyUTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BradleyUTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1678D9001E96BC3E007B9397 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1678D9021E96BC3E007B9397 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1678D9051E96BC3E007B9397 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1678D9071E96BC3E007B9397 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1678D90A1E96BC3E007B9397 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -182,20 +180,11 @@
 			children = (
 				162E474B1EC167CA0034CBF4 /* BradleyUTour.entitlements */,
 				1678D9001E96BC3E007B9397 /* AppDelegate.swift */,
-				1678D9021E96BC3E007B9397 /* ViewController.swift */,
-				EE5EA3891E96C8D400B7CBFF /* SignInViewController.swift */,
-				20A85B411E9D5A4300022C1A /* MapViewController.swift */,
-				16A29BD01EC16CDA0078C265 /* Landmark.swift */,
-				16A810F11E9FFDF600D66088 /* LandmarkPopulator.swift */,
-				16BF56EF1E9E9FD700790E71 /* ChecklistViewController.swift */,
-				16A810F31EA01CE600D66088 /* LandmarkUnvisitedTableViewCell.swift */,
-				16A810F51EA01D6100D66088 /* LandmarkVisitedTableViewCell.swift */,
-				16BF56ED1E9E7BC800790E71 /* RewardsViewController.swift */,
-				16BF56F11E9EC4CF00790E71 /* LandmarkViewController.swift */,
-				EE5E72B51EB1F52600717F87 /* TutorialViewController.swift */,
-				161B783F1EB2AD2600376992 /* Tutorial7ViewController.swift */,
-				1621E2511EB2757F0052AB4D /* ProfileViewController.swift */,
-				1668C5F31EB7F01400437DBE /* SettingsViewController.swift */,
+				16A29BD31EC172520078C265 /* SigninAndTutorial */,
+				16A29BD41EC172660078C265 /* Map */,
+				16A29BD51EC172750078C265 /* ChecklistAndLandmark */,
+				16A29BD71EC172990078C265 /* Rewards */,
+				16A29BD81EC172A10078C265 /* ProfileAndSettings */,
 				1678D9041E96BC3E007B9397 /* Main.storyboard */,
 				1678D9071E96BC3E007B9397 /* Assets.xcassets */,
 				1678D9091E96BC3E007B9397 /* LaunchScreen.storyboard */,
@@ -213,6 +202,54 @@
 				1678D9171E96BC3E007B9397 /* Info.plist */,
 			);
 			path = BradleyUTourTests;
+			sourceTree = "<group>";
+		};
+		16A29BD31EC172520078C265 /* SigninAndTutorial */ = {
+			isa = PBXGroup;
+			children = (
+				EE5EA3891E96C8D400B7CBFF /* SignInViewController.swift */,
+				EE5E72B51EB1F52600717F87 /* TutorialViewController.swift */,
+				161B783F1EB2AD2600376992 /* Tutorial7ViewController.swift */,
+			);
+			name = SigninAndTutorial;
+			sourceTree = "<group>";
+		};
+		16A29BD41EC172660078C265 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				20A85B411E9D5A4300022C1A /* MapViewController.swift */,
+				16A29BD01EC16CDA0078C265 /* Landmark.swift */,
+				16A810F11E9FFDF600D66088 /* LandmarkPopulator.swift */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		16A29BD51EC172750078C265 /* ChecklistAndLandmark */ = {
+			isa = PBXGroup;
+			children = (
+				16BF56EF1E9E9FD700790E71 /* ChecklistViewController.swift */,
+				16A810F31EA01CE600D66088 /* LandmarkUnvisitedTableViewCell.swift */,
+				16A810F51EA01D6100D66088 /* LandmarkVisitedTableViewCell.swift */,
+				16BF56F11E9EC4CF00790E71 /* LandmarkViewController.swift */,
+			);
+			name = ChecklistAndLandmark;
+			sourceTree = "<group>";
+		};
+		16A29BD71EC172990078C265 /* Rewards */ = {
+			isa = PBXGroup;
+			children = (
+				16BF56ED1E9E7BC800790E71 /* RewardsViewController.swift */,
+			);
+			name = Rewards;
+			sourceTree = "<group>";
+		};
+		16A29BD81EC172A10078C265 /* ProfileAndSettings */ = {
+			isa = PBXGroup;
+			children = (
+				1621E2511EB2757F0052AB4D /* ProfileViewController.swift */,
+				1668C5F31EB7F01400437DBE /* SettingsViewController.swift */,
+			);
+			name = ProfileAndSettings;
 			sourceTree = "<group>";
 		};
 		388A288D33A73D0706DBDBF9 /* Pods */ = {
@@ -486,7 +523,6 @@
 				16BF56F21E9EC4D000790E71 /* LandmarkViewController.swift in Sources */,
 				16A810F21E9FFDF600D66088 /* LandmarkPopulator.swift in Sources */,
 				16BF56F01E9E9FD700790E71 /* ChecklistViewController.swift in Sources */,
-				1678D9031E96BC3E007B9397 /* ViewController.swift in Sources */,
 				1668C5F41EB7F01400437DBE /* SettingsViewController.swift in Sources */,
 				1678D9011E96BC3E007B9397 /* AppDelegate.swift in Sources */,
 				EE5EA38A1E96C8D500B7CBFF /* SignInViewController.swift in Sources */,
