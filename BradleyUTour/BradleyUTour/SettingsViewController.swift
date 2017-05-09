@@ -25,8 +25,7 @@ class SettingsViewController: UIViewController, UNUserNotificationCenterDelegate
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func pressed(_ sender: UIButton) {
-        print("pressed")
+    @IBAction func finishTourPressed(_ sender: Any) {
         let realm = try! Realm()
         let landmarks = realm.objects(Landmark.self)
         
@@ -35,6 +34,9 @@ class SettingsViewController: UIViewController, UNUserNotificationCenterDelegate
                 landmark.visited = false
             }
         }
+        
+        performSegue(withIdentifier: "GoToSurvey", sender: self)
+        
         /*
         UNUserNotificationCenter.current().getNotificationSettings(completionHandler: { (notificationSettings) in
             switch notificationSettings.authorizationStatus {
@@ -95,7 +97,6 @@ class SettingsViewController: UIViewController, UNUserNotificationCenterDelegate
         completionHandler([.alert])
         print("here")
     }
-    
 
     /*
     // MARK: - Navigation
@@ -109,9 +110,11 @@ class SettingsViewController: UIViewController, UNUserNotificationCenterDelegate
 
 }
 
+
+
 /*
 extension ViewController: UNUserNotificationCenterDelegate {
     
-    
+ 
     
 }*/
