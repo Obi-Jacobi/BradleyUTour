@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        let config = Realm.Configuration(
+        var config = Realm.Configuration(
             // Set the new schema version. This must be greater than the previously used
             // version (if you've never set a schema version before, the version is 0).
             schemaVersion: 1,
@@ -32,6 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     // And will update the schema on disk automatically
                 }
         })
+        let id = "group.edu.bradley.jwilson.BradleyUTour.container"
+        let url = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: id)
+        let realmUrl = URL(fileURLWithPath: (url?.path)!).appendingPathComponent("default.realm")
+        
+        config.fileURL = realmUrl
         
         // Tell Realm to use this new configuration object for the default Realm
         Realm.Configuration.defaultConfiguration = config

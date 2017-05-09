@@ -10,3 +10,11 @@ target 'BradleyUTour' do
   pod 'RealmSwift'
   
 end
+
+target 'BradleyUTourMessagesExtension' do 
+
+  use_frameworks!
+  
+  pod 'RealmSwift'
+  
+end 

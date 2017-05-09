@@ -9,15 +9,6 @@
 import UIKit
 import RealmSwift
 
-class Landmark: Object {
-    dynamic var name = ""
-    dynamic var visited = false
-    dynamic var landmarkDescription = ""
-    dynamic var latitude:Double = 0.0
-    dynamic var longitude:Double = 0.0
-    dynamic var image = NSData()
-}
-
 class ChecklistViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var progressBar: UIProgressView!
