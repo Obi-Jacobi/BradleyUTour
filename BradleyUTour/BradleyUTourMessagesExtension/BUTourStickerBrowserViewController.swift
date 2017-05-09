@@ -11,7 +11,9 @@ import Messages
 import RealmSwift
 
 class BUTourStickerBrowserViewController: MSStickerBrowserViewController {
-
+    
+    let dict = ["Founder's Circle":"TestSticker1", "Bradley Hall":"TestSticker2", "Caterpillar GCC":"kaboom_angry", "Jobst Hall":"kaboom_happy", "Westlake Hall":"kaboom_love", "Baker Hall":"kaboom_normal", "Michel Student Center":"kaboom_shocked", "Cullom-Davis Library":"kaboom_winking"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -58,14 +60,23 @@ class BUTourStickerBrowserViewController: MSStickerBrowserViewController {
     override func stickerBrowserView(_ stickerBrowserView: MSStickerBrowserView, stickerAt index: Int) -> MSSticker {
         var url:URL?
         
-        switch index {
-        case 0:
-             url = Bundle.main.url(forResource: "kaboom_angry", withExtension: "png")
-        default:
-            print("Here")
+        let realm = try! Realm()
+        let landmarks = realm.objects(Landmark.self)
+        var visitedLandmarks = [Landmark]()
+        
+        for landmark in landmarks {
+            if landmark.visited {
+                visitedLandmarks.append(landmark)
+            }
         }
         
-        //let url = Bundle.main.url(forResource: "TestSticker1", withExtension: "png")
+        let currentLandmark = visitedLandmarks[index]
+        print(currentLandmark)
+        
+        if let value = dict[currentLandmark.name] {
+            url = Bundle.main.url(forResource: value, withExtension: "png")
+        }
+        
         let sticker = try! MSSticker.init(contentsOfFileURL: url!, localizedDescription: "TestThing")
         
         return sticker
