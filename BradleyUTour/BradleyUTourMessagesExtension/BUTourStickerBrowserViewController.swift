@@ -15,18 +15,6 @@ class BUTourStickerBrowserViewController: MSStickerBrowserViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let realm = try! Realm()
-        
-        let landmarks = realm.objects(Landmark.self)
-        
-        var visitedCount = 0
-        for landmark in landmarks {
-            if landmark.visited {
-                visitedCount += 1
-            }
-        }
-        print(visitedCount)
-        
         // Do any additional setup after loading the view.
     }
 
@@ -35,6 +23,19 @@ class BUTourStickerBrowserViewController: MSStickerBrowserViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        let realm = try! Realm()
+        
+        let landmarks = realm.objects(Landmark.self)
+        
+        print("viewDidAppear")
+        
+        for landmark in landmarks {
+            print("\(landmark.name) \(landmark.visited)")
+        }
+    }
+    
+    /*
     override func numberOfStickers(in stickerBrowserView: MSStickerBrowserView) -> Int {
         return 2
     }
@@ -53,7 +54,7 @@ class BUTourStickerBrowserViewController: MSStickerBrowserViewController {
         let sticker = try! MSSticker.init(contentsOfFileURL: url!, localizedDescription: "TestThing")
         
         return sticker
-    }
+    }*/
 
     /*
     // MARK: - Navigation

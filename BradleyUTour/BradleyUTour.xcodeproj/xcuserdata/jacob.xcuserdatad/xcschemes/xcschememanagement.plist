@@ -9,9 +9,19 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>BradleyUTourMessagesExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>162E47341EC164870034CBF4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1678D8FC1E96BC3E007B9397</key>
 		<dict>
 			<key>primary</key>

@@ -1,0 +1,6 @@
+framework module Pods_BradleyUTourMessagesExtension {
+  umbrella header "Pods-BradleyUTourMessagesExtension-umbrella.h"
+
+  export *
+  module * { export * }
+}

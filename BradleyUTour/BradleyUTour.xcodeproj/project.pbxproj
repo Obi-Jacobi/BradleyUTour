@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		161B78401EB2AD2600376992 /* Tutorial7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161B783F1EB2AD2600376992 /* Tutorial7ViewController.swift */; };
 		1621E2521EB2757F0052AB4D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621E2511EB2757F0052AB4D /* ProfileViewController.swift */; };
+		162E47371EC164870034CBF4 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 162E47361EC164870034CBF4 /* Messages.framework */; };
+		162E473A1EC164870034CBF4 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162E47391EC164870034CBF4 /* MessagesViewController.swift */; };
+		162E473D1EC164870034CBF4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162E473B1EC164870034CBF4 /* MainInterface.storyboard */; };
+		162E473F1EC164870034CBF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 162E473E1EC164870034CBF4 /* Assets.xcassets */; };
+		162E47431EC164870034CBF4 /* BradleyUTourMessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 162E47351EC164870034CBF4 /* BradleyUTourMessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		162E47491EC164AF0034CBF4 /* BUTourStickerBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162E47481EC164AF0034CBF4 /* BUTourStickerBrowserViewController.swift */; };
+		162E474A1EC164C80034CBF4 /* BUTourStickerBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162E47481EC164AF0034CBF4 /* BUTourStickerBrowserViewController.swift */; };
 		1668C5F41EB7F01400437DBE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1668C5F31EB7F01400437DBE /* SettingsViewController.swift */; };
 		166B72841EB931AF00043A8E /* Location.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 166B72831EB931AF00043A8E /* Location.gpx */; };
 		1678D9011E96BC3E007B9397 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1678D9001E96BC3E007B9397 /* AppDelegate.swift */; };
@@ -17,6 +24,8 @@
 		1678D9081E96BC3E007B9397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1678D9071E96BC3E007B9397 /* Assets.xcassets */; };
 		1678D90B1E96BC3E007B9397 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1678D9091E96BC3E007B9397 /* LaunchScreen.storyboard */; };
 		1678D9161E96BC3E007B9397 /* BradleyUTourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1678D9151E96BC3E007B9397 /* BradleyUTourTests.swift */; };
+		16A29BD11EC16CDA0078C265 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A29BD01EC16CDA0078C265 /* Landmark.swift */; };
+		16A29BD21EC16CDA0078C265 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A29BD01EC16CDA0078C265 /* Landmark.swift */; };
 		16A810F21E9FFDF600D66088 /* LandmarkPopulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A810F11E9FFDF600D66088 /* LandmarkPopulator.swift */; };
 		16A810F41EA01CE600D66088 /* LandmarkUnvisitedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A810F31EA01CE600D66088 /* LandmarkUnvisitedTableViewCell.swift */; };
 		16A810F61EA01D6100D66088 /* LandmarkVisitedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A810F51EA01D6100D66088 /* LandmarkVisitedTableViewCell.swift */; };
@@ -26,11 +35,19 @@
 		2057D9661EAFCDD200C3ECEF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2057D9651EAFCDD200C3ECEF /* Utilities.swift */; };
 		20A85B421E9D5A4300022C1A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A85B411E9D5A4300022C1A /* MapViewController.swift */; };
 		916961FC5B9764CAEDE6BBA4 /* Pods_BradleyUTour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A9753BBD3F6F79647A145C /* Pods_BradleyUTour.framework */; };
+		9525EE1A1ED2B8F1FD8D759E /* Pods_BradleyUTourMessagesExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 873B3A69B177EA87F7235CC3 /* Pods_BradleyUTourMessagesExtension.framework */; };
 		EE5E72B61EB1F52600717F87 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5E72B51EB1F52600717F87 /* TutorialViewController.swift */; };
 		EE5EA38A1E96C8D500B7CBFF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5EA3891E96C8D400B7CBFF /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		162E47411EC164870034CBF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1678D8F51E96BC3E007B9397 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 162E47341EC164870034CBF4;
+			remoteInfo = BradleyUTourMessagesExtension;
+		};
 		1678D9121E96BC3E007B9397 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1678D8F51E96BC3E007B9397 /* Project object */;
@@ -40,9 +57,32 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		162E47471EC164870034CBF4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				162E47431EC164870034CBF4 /* BradleyUTourMessagesExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		161B783F1EB2AD2600376992 /* Tutorial7ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial7ViewController.swift; sourceTree = "<group>"; };
 		1621E2511EB2757F0052AB4D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		162E47351EC164870034CBF4 /* BradleyUTourMessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BradleyUTourMessagesExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		162E47361EC164870034CBF4 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		162E47391EC164870034CBF4 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		162E473C1EC164870034CBF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		162E473E1EC164870034CBF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		162E47401EC164870034CBF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		162E47481EC164AF0034CBF4 /* BUTourStickerBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BUTourStickerBrowserViewController.swift; sourceTree = "<group>"; };
+		162E474B1EC167CA0034CBF4 /* BradleyUTour.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BradleyUTour.entitlements; sourceTree = "<group>"; };
+		162E474C1EC1680B0034CBF4 /* BradleyUTourMessagesExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BradleyUTourMessagesExtension.entitlements; sourceTree = "<group>"; };
 		1668C5F31EB7F01400437DBE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		166B72831EB931AF00043A8E /* Location.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 		1678D8FD1E96BC3E007B9397 /* BradleyUTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BradleyUTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +95,7 @@
 		1678D9111E96BC3E007B9397 /* BradleyUTourTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BradleyUTourTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1678D9151E96BC3E007B9397 /* BradleyUTourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BradleyUTourTests.swift; sourceTree = "<group>"; };
 		1678D9171E96BC3E007B9397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16A29BD01EC16CDA0078C265 /* Landmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Landmark.swift; path = BradleyUTour/Landmark.swift; sourceTree = SOURCE_ROOT; };
 		16A810F11E9FFDF600D66088 /* LandmarkPopulator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkPopulator.swift; sourceTree = "<group>"; };
 		16A810F31EA01CE600D66088 /* LandmarkUnvisitedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkUnvisitedTableViewCell.swift; sourceTree = "<group>"; };
 		16A810F51EA01D6100D66088 /* LandmarkVisitedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkVisitedTableViewCell.swift; sourceTree = "<group>"; };
@@ -63,6 +104,9 @@
 		16BF56F11E9EC4CF00790E71 /* LandmarkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandmarkViewController.swift; sourceTree = "<group>"; };
 		2057D9651EAFCDD200C3ECEF /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		20A85B411E9D5A4300022C1A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		7CF52E7B89C33439C81E8BE1 /* Pods-BradleyUTourMessagesExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BradleyUTourMessagesExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BradleyUTourMessagesExtension/Pods-BradleyUTourMessagesExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		8598E12F2E94CC3D1223969D /* Pods-BradleyUTourMessagesExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BradleyUTourMessagesExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-BradleyUTourMessagesExtension/Pods-BradleyUTourMessagesExtension.release.xcconfig"; sourceTree = "<group>"; };
+		873B3A69B177EA87F7235CC3 /* Pods_BradleyUTourMessagesExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BradleyUTourMessagesExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC821909BD1627FF807A4863 /* Pods-BradleyUTour.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BradleyUTour.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BradleyUTour/Pods-BradleyUTour.debug.xcconfig"; sourceTree = "<group>"; };
 		DBDAB9C6F2B7DD6D07ED8166 /* Pods-BradleyUTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BradleyUTour.release.xcconfig"; path = "Pods/Target Support Files/Pods-BradleyUTour/Pods-BradleyUTour.release.xcconfig"; sourceTree = "<group>"; };
 		EE5E72B51EB1F52600717F87 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +115,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		162E47321EC164870034CBF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				162E47371EC164870034CBF4 /* Messages.framework in Frameworks */,
+				9525EE1A1ED2B8F1FD8D759E /* Pods_BradleyUTourMessagesExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1678D8FA1E96BC3E007B9397 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -89,11 +142,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		162E47381EC164870034CBF4 /* BradleyUTourMessagesExtension */ = {
+			isa = PBXGroup;
+			children = (
+				162E474C1EC1680B0034CBF4 /* BradleyUTourMessagesExtension.entitlements */,
+				162E47391EC164870034CBF4 /* MessagesViewController.swift */,
+				162E47481EC164AF0034CBF4 /* BUTourStickerBrowserViewController.swift */,
+				162E473B1EC164870034CBF4 /* MainInterface.storyboard */,
+				162E473E1EC164870034CBF4 /* Assets.xcassets */,
+				162E47401EC164870034CBF4 /* Info.plist */,
+			);
+			path = BradleyUTourMessagesExtension;
+			sourceTree = "<group>";
+		};
 		1678D8F41E96BC3E007B9397 = {
 			isa = PBXGroup;
 			children = (
 				1678D8FF1E96BC3E007B9397 /* BradleyUTour */,
 				1678D9141E96BC3E007B9397 /* BradleyUTourTests */,
+				162E47381EC164870034CBF4 /* BradleyUTourMessagesExtension */,
 				1678D8FE1E96BC3E007B9397 /* Products */,
 				388A288D33A73D0706DBDBF9 /* Pods */,
 				8950DB314DB5C4326688FD90 /* Frameworks */,
@@ -105,6 +172,7 @@
 			children = (
 				1678D8FD1E96BC3E007B9397 /* BradleyUTour.app */,
 				1678D9111E96BC3E007B9397 /* BradleyUTourTests.xctest */,
+				162E47351EC164870034CBF4 /* BradleyUTourMessagesExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,10 +180,12 @@
 		1678D8FF1E96BC3E007B9397 /* BradleyUTour */ = {
 			isa = PBXGroup;
 			children = (
+				162E474B1EC167CA0034CBF4 /* BradleyUTour.entitlements */,
 				1678D9001E96BC3E007B9397 /* AppDelegate.swift */,
 				1678D9021E96BC3E007B9397 /* ViewController.swift */,
 				EE5EA3891E96C8D400B7CBFF /* SignInViewController.swift */,
 				20A85B411E9D5A4300022C1A /* MapViewController.swift */,
+				16A29BD01EC16CDA0078C265 /* Landmark.swift */,
 				16A810F11E9FFDF600D66088 /* LandmarkPopulator.swift */,
 				16BF56EF1E9E9FD700790E71 /* ChecklistViewController.swift */,
 				16A810F31EA01CE600D66088 /* LandmarkUnvisitedTableViewCell.swift */,
@@ -150,6 +220,8 @@
 			children = (
 				AC821909BD1627FF807A4863 /* Pods-BradleyUTour.debug.xcconfig */,
 				DBDAB9C6F2B7DD6D07ED8166 /* Pods-BradleyUTour.release.xcconfig */,
+				7CF52E7B89C33439C81E8BE1 /* Pods-BradleyUTourMessagesExtension.debug.xcconfig */,
+				8598E12F2E94CC3D1223969D /* Pods-BradleyUTourMessagesExtension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -158,6 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				F9A9753BBD3F6F79647A145C /* Pods_BradleyUTour.framework */,
+				162E47361EC164870034CBF4 /* Messages.framework */,
+				873B3A69B177EA87F7235CC3 /* Pods_BradleyUTourMessagesExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -165,6 +239,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		162E47341EC164870034CBF4 /* BradleyUTourMessagesExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 162E47461EC164870034CBF4 /* Build configuration list for PBXNativeTarget "BradleyUTourMessagesExtension" */;
+			buildPhases = (
+				FE1F86C9BA40EEBBDF9ADBA1 /* [CP] Check Pods Manifest.lock */,
+				162E47311EC164870034CBF4 /* Sources */,
+				162E47321EC164870034CBF4 /* Frameworks */,
+				162E47331EC164870034CBF4 /* Resources */,
+				C29D5930040A6592948443A1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BradleyUTourMessagesExtension;
+			productName = BradleyUTourMessagesExtension;
+			productReference = 162E47351EC164870034CBF4 /* BradleyUTourMessagesExtension.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
 		1678D8FC1E96BC3E007B9397 /* BradleyUTour */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1678D91A1E96BC3E007B9397 /* Build configuration list for PBXNativeTarget "BradleyUTour" */;
@@ -175,10 +268,12 @@
 				1678D8FB1E96BC3E007B9397 /* Resources */,
 				D8E63D72D74522E9FB183EB4 /* [CP] Embed Pods Frameworks */,
 				72690DF7237CE652ACEF3A50 /* [CP] Copy Pods Resources */,
+				162E47471EC164870034CBF4 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				162E47421EC164870034CBF4 /* PBXTargetDependency */,
 			);
 			name = BradleyUTour;
 			productName = BradleyUTour;
@@ -213,10 +308,25 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Bradley University";
 				TargetAttributes = {
+					162E47341EC164870034CBF4 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = G3KPCQH6RP;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					1678D8FC1E96BC3E007B9397 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = G3KPCQH6RP;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					1678D9101E96BC3E007B9397 = {
 						CreatedOnToolsVersion = 8.3;
@@ -241,11 +351,21 @@
 			targets = (
 				1678D8FC1E96BC3E007B9397 /* BradleyUTour */,
 				1678D9101E96BC3E007B9397 /* BradleyUTourTests */,
+				162E47341EC164870034CBF4 /* BradleyUTourMessagesExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		162E47331EC164870034CBF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				162E473F1EC164870034CBF4 /* Assets.xcassets in Resources */,
+				162E473D1EC164870034CBF4 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1678D8FB1E96BC3E007B9397 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -297,6 +417,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BradleyUTour/Pods-BradleyUTour-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C29D5930040A6592948443A1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BradleyUTourMessagesExtension/Pods-BradleyUTourMessagesExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D8E63D72D74522E9FB183EB4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,9 +447,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BradleyUTour/Pods-BradleyUTour-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FE1F86C9BA40EEBBDF9ADBA1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		162E47311EC164870034CBF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				162E47491EC164AF0034CBF4 /* BUTourStickerBrowserViewController.swift in Sources */,
+				16A29BD21EC16CDA0078C265 /* Landmark.swift in Sources */,
+				162E473A1EC164870034CBF4 /* MessagesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1678D8F91E96BC3E007B9397 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -330,7 +490,9 @@
 				1668C5F41EB7F01400437DBE /* SettingsViewController.swift in Sources */,
 				1678D9011E96BC3E007B9397 /* AppDelegate.swift in Sources */,
 				EE5EA38A1E96C8D500B7CBFF /* SignInViewController.swift in Sources */,
+				16A29BD11EC16CDA0078C265 /* Landmark.swift in Sources */,
 				16A810F61EA01D6100D66088 /* LandmarkVisitedTableViewCell.swift in Sources */,
+				162E474A1EC164C80034CBF4 /* BUTourStickerBrowserViewController.swift in Sources */,
 				1621E2521EB2757F0052AB4D /* ProfileViewController.swift in Sources */,
 				EE5E72B61EB1F52600717F87 /* TutorialViewController.swift in Sources */,
 				20A85B421E9D5A4300022C1A /* MapViewController.swift in Sources */,
@@ -348,6 +510,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		162E47421EC164870034CBF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 162E47341EC164870034CBF4 /* BradleyUTourMessagesExtension */;
+			targetProxy = 162E47411EC164870034CBF4 /* PBXContainerItemProxy */;
+		};
 		1678D9131E96BC3E007B9397 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1678D8FC1E96BC3E007B9397 /* BradleyUTour */;
@@ -356,6 +523,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		162E473B1EC164870034CBF4 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				162E473C1EC164870034CBF4 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		1678D9041E96BC3E007B9397 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -375,6 +550,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		162E47441EC164870034CBF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CF52E7B89C33439C81E8BE1 /* Pods-BradleyUTourMessagesExtension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = BradleyUTourMessagesExtension/BradleyUTourMessagesExtension.entitlements;
+				DEVELOPMENT_TEAM = G3KPCQH6RP;
+				INFOPLIST_FILE = BradleyUTourMessagesExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.bradley.jwilson.BradleyUTour.BradleyUTourMessagesExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		162E47451EC164870034CBF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8598E12F2E94CC3D1223969D /* Pods-BradleyUTourMessagesExtension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = BradleyUTourMessagesExtension/BradleyUTourMessagesExtension.entitlements;
+				DEVELOPMENT_TEAM = G3KPCQH6RP;
+				INFOPLIST_FILE = BradleyUTourMessagesExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.bradley.jwilson.BradleyUTour.BradleyUTourMessagesExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		1678D9181E96BC3E007B9397 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -474,7 +681,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AC821909BD1627FF807A4863 /* Pods-BradleyUTour.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BradleyUTour/BradleyUTour.entitlements;
 				DEVELOPMENT_TEAM = G3KPCQH6RP;
 				INFOPLIST_FILE = BradleyUTour/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -488,7 +697,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DBDAB9C6F2B7DD6D07ED8166 /* Pods-BradleyUTour.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BradleyUTour/BradleyUTour.entitlements;
 				DEVELOPMENT_TEAM = G3KPCQH6RP;
 				INFOPLIST_FILE = BradleyUTour/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -531,6 +742,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		162E47461EC164870034CBF4 /* Build configuration list for PBXNativeTarget "BradleyUTourMessagesExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				162E47441EC164870034CBF4 /* Debug */,
+				162E47451EC164870034CBF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1678D8F81E96BC3E007B9397 /* Build configuration list for PBXProject "BradleyUTour" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
