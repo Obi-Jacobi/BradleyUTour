@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		161B78401EB2AD2600376992 /* Tutorial7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161B783F1EB2AD2600376992 /* Tutorial7ViewController.swift */; };
 		1621E2521EB2757F0052AB4D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1621E2511EB2757F0052AB4D /* ProfileViewController.swift */; };
+		1627CB791EC1F6B200D0DB8A /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1627CB781EC1F6B200D0DB8A /* SurveyViewController.swift */; };
 		162E47371EC164870034CBF4 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 162E47361EC164870034CBF4 /* Messages.framework */; };
 		162E473A1EC164870034CBF4 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162E47391EC164870034CBF4 /* MessagesViewController.swift */; };
 		162E473D1EC164870034CBF4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 162E473B1EC164870034CBF4 /* MainInterface.storyboard */; };
@@ -49,7 +50,6 @@
 		9525EE1A1ED2B8F1FD8D759E /* Pods_BradleyUTourMessagesExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 873B3A69B177EA87F7235CC3 /* Pods_BradleyUTourMessagesExtension.framework */; };
 		EE5E72B61EB1F52600717F87 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5E72B51EB1F52600717F87 /* TutorialViewController.swift */; };
 		EE5EA38A1E96C8D500B7CBFF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5EA3891E96C8D400B7CBFF /* SignInViewController.swift */; };
-		EEC3CD331EC120750052010E /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3CD321EC120750052010E /* SurveyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +86,7 @@
 /* Begin PBXFileReference section */
 		161B783F1EB2AD2600376992 /* Tutorial7ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial7ViewController.swift; sourceTree = "<group>"; };
 		1621E2511EB2757F0052AB4D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		1627CB781EC1F6B200D0DB8A /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		162E47351EC164870034CBF4 /* BradleyUTourMessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BradleyUTourMessagesExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		162E47361EC164870034CBF4 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		162E47391EC164870034CBF4 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
@@ -128,7 +129,6 @@
 		DBDAB9C6F2B7DD6D07ED8166 /* Pods-BradleyUTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BradleyUTour.release.xcconfig"; path = "Pods/Target Support Files/Pods-BradleyUTour/Pods-BradleyUTour.release.xcconfig"; sourceTree = "<group>"; };
 		EE5E72B51EB1F52600717F87 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		EE5EA3891E96C8D400B7CBFF /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		EEC3CD321EC120750052010E /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		F9A9753BBD3F6F79647A145C /* Pods_BradleyUTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BradleyUTour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -280,6 +280,7 @@
 		16A29BD81EC172A10078C265 /* ProfileAndSettings */ = {
 			isa = PBXGroup;
 			children = (
+				1627CB781EC1F6B200D0DB8A /* SurveyViewController.swift */,
 				1621E2511EB2757F0052AB4D /* ProfileViewController.swift */,
 				1668C5F31EB7F01400437DBE /* SettingsViewController.swift */,
 			);
@@ -564,12 +565,12 @@
 			files = (
 				16BF56EE1E9E7BC800790E71 /* RewardsViewController.swift in Sources */,
 				16A810F41EA01CE600D66088 /* LandmarkUnvisitedTableViewCell.swift in Sources */,
-				EEC3CD331EC120750052010E /* SurveyViewController.swift in Sources */,
 				161B78401EB2AD2600376992 /* Tutorial7ViewController.swift in Sources */,
 				2057D9661EAFCDD200C3ECEF /* Utilities.swift in Sources */,
 				16BF56F21E9EC4D000790E71 /* LandmarkViewController.swift in Sources */,
 				16A810F21E9FFDF600D66088 /* LandmarkPopulator.swift in Sources */,
 				16BF56F01E9E9FD700790E71 /* ChecklistViewController.swift in Sources */,
+				1627CB791EC1F6B200D0DB8A /* SurveyViewController.swift in Sources */,
 				1668C5F41EB7F01400437DBE /* SettingsViewController.swift in Sources */,
 				1678D9011E96BC3E007B9397 /* AppDelegate.swift in Sources */,
 				EE5EA38A1E96C8D500B7CBFF /* SignInViewController.swift in Sources */,
