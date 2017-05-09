@@ -23,6 +23,7 @@ class BUTourStickerBrowserViewController: MSStickerBrowserViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /*
     override func viewDidAppear(_ animated: Bool) {
         let realm = try! Realm()
         
@@ -33,28 +34,42 @@ class BUTourStickerBrowserViewController: MSStickerBrowserViewController {
         for landmark in landmarks {
             print("\(landmark.name) \(landmark.visited)")
         }
-    }
+    }*/
     
-    /*
+    
     override func numberOfStickers(in stickerBrowserView: MSStickerBrowserView) -> Int {
-        return 2
+        let realm = try! Realm()
+        
+        let landmarks = realm.objects(Landmark.self)
+        
+        print("viewDidAppear")
+        
+        var visitedCount = 0
+        for landmark in landmarks {
+            if landmark.visited {
+                visitedCount += 1
+            }
+            //print("\(landmark.name) \(landmark.visited)")
+        }
+        
+        return visitedCount
     }
     
     override func stickerBrowserView(_ stickerBrowserView: MSStickerBrowserView, stickerAt index: Int) -> MSSticker {
-        //let thing = Bundle.
-        //let path = Bundle.main.path(forResource: "TestSticker1", ofType: "png")
-        let url = Bundle.main.url(forResource: "TestSticker1", withExtension: "png")
-        //let url = URL(fileURLWithPath: path!)
-        //let image = UIImage(contentsOfFile: "TestSticker1")
-        //let data = UIImagePNGRepresentation(image!)
-        //let test = URL(dataRepresentation: data!, relativeTo: <#T##URL?#>)
-        //let testUrl = URL(fileReferenceLiteralResourceName: "TestSticker1.png")
-        //let testUrl = URL(fileURLWithPath: "TestSticker1.png")
-        //let sticker = MSSticker(contentsOfFileURL: testUrl, localizedDescription: "Test")
+        var url:URL?
+        
+        switch index {
+        case 0:
+             url = Bundle.main.url(forResource: "kaboom_angry", withExtension: "png")
+        default:
+            print("Here")
+        }
+        
+        //let url = Bundle.main.url(forResource: "TestSticker1", withExtension: "png")
         let sticker = try! MSSticker.init(contentsOfFileURL: url!, localizedDescription: "TestThing")
         
         return sticker
-    }*/
+    }
 
     /*
     // MARK: - Navigation

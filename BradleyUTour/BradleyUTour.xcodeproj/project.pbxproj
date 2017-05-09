@@ -49,6 +49,7 @@
 		9525EE1A1ED2B8F1FD8D759E /* Pods_BradleyUTourMessagesExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 873B3A69B177EA87F7235CC3 /* Pods_BradleyUTourMessagesExtension.framework */; };
 		EE5E72B61EB1F52600717F87 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5E72B51EB1F52600717F87 /* TutorialViewController.swift */; };
 		EE5EA38A1E96C8D500B7CBFF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5EA3891E96C8D400B7CBFF /* SignInViewController.swift */; };
+		EEC3CD331EC120750052010E /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC3CD321EC120750052010E /* SurveyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		DBDAB9C6F2B7DD6D07ED8166 /* Pods-BradleyUTour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BradleyUTour.release.xcconfig"; path = "Pods/Target Support Files/Pods-BradleyUTour/Pods-BradleyUTour.release.xcconfig"; sourceTree = "<group>"; };
 		EE5E72B51EB1F52600717F87 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		EE5EA3891E96C8D400B7CBFF /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		EEC3CD321EC120750052010E /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		F9A9753BBD3F6F79647A145C /* Pods_BradleyUTour.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BradleyUTour.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -562,6 +564,7 @@
 			files = (
 				16BF56EE1E9E7BC800790E71 /* RewardsViewController.swift in Sources */,
 				16A810F41EA01CE600D66088 /* LandmarkUnvisitedTableViewCell.swift in Sources */,
+				EEC3CD331EC120750052010E /* SurveyViewController.swift in Sources */,
 				161B78401EB2AD2600376992 /* Tutorial7ViewController.swift in Sources */,
 				2057D9661EAFCDD200C3ECEF /* Utilities.swift in Sources */,
 				16BF56F21E9EC4D000790E71 /* LandmarkViewController.swift in Sources */,
